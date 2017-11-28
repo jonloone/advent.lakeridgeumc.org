@@ -1,0 +1,198 @@
+.calendar {
+  padding:2rem;
+  display: grid;
+  grid-gap: 20px;
+  max-width:1200px;
+  margin:auto;
+  grid-template-columns: repeat(2,1fr);
+  grid-template-rows: minmax(1fr, 500px);
+     grid-auto-rows: minmax(50px, auto);
+    @media (--medium) {
+        grid-template-columns: repeat(3, 1fr);
+      
+           grid-gap: 40px;
+    }
+}
+
+
+
+
+.grid-item {
+
+  border-radius: 3px;
+overflow:hidden;
+  background: var(--purple);
+  font-size:250%;
+  position:relative;
+  color: #fff;
+  display: flex; 
+  width:auto;
+  height:100%;
+  align-items: center;
+  justify-content: center;
+  cursor:pointer;
+   transition:all .8s ;
+
+     background-position:50% 200%;
+
+
+    h1{
+      position:relative;
+      z-index:5;
+    }
+}
+
+
+
+
+
+
+.grid-item:before{
+  content:'';
+  background:var(--purple-dates);
+  z-index:2;
+  position:absolute;
+
+  top:0;
+  left:0;
+  height:100%;
+  width:100%;
+  transition:all .4s ease;
+
+}
+
+
+
+.grid-item:hover:before, .grid-item:hover h1,.grid-item:hover .today{
+   transform:translateY(-30%);
+}
+
+
+.expanded.grid-item:before{
+  transform:translateY(-100%);
+}
+
+
+.no-hover:hover:before, .no-hover:hover h1,.no-hover:hover .today{
+   transform:translateY(0);
+}
+
+
+.grid-item:after{
+  content:'';
+ //background:var(--white);
+ // background:url(../images/burst.svg) no-repeat;
+  background-size:contain;
+  background-position:center;
+  height:1px;
+  width:1px;
+
+  position:absolute;
+  transition:all .4s;
+
+}
+
+
+
+.today{
+height:100%;
+width:100%;
+
+
+ background:url(../images/burst.svg) no-repeat;
+  background-size:contain;
+  background-position:center;
+z-index:9999;
+  position:absolute;
+  transition:all .4s;
+}
+
+
+
+.expanded.grid-item:after{
+  content:'';
+//transform: scale(3000);
+  position:absolute;
+  transition:all 1s;
+
+
+}
+
+
+.expanded.grid-item .today{
+  transform:scale(100);
+  transition:all 1s;
+}
+
+.expanded.grid-item:after{
+  z-index:100;
+}
+
+
+
+
+.grid-item.expanded{
+overflow:initial;
+
+  h1{
+    opacity:0;
+  }
+}
+
+
+
+/*==================================
+=            Grid dates            =
+==================================*/
+
+
+.grid-item:nth-child(1) {
+  grid-row: 1 / 1;
+  grid-column: 1 / 2;
+      @media (--medium) {
+grid-row:1/4;
+grid-column:1;
+      }
+}
+
+  
+
+
+.grid-item:nth-child(2) {
+        @media (--medium) {
+  grid-row: 1 / 3;
+  grid-column: 2;
+}
+}
+
+.grid-item:nth-child(3) {
+        @media (--medium) {
+  grid-row: 1 / 4;
+  grid-column: 3;
+}
+}
+
+.grid-item:nth-child(4) {
+        @media (--medium) {
+  grid-row: 4 / 7;
+  grid-column: 1;
+}
+}
+
+.grid-item:nth-child(5) {
+        @media (--medium) {
+  grid-row: 3 / 7;
+  grid-column: 2;
+}
+}
+
+.grid-item:nth-child(6) {
+        @media (--medium) {
+   grid-row: 4 / 6;
+  grid-column: 3;
+}
+}
+
+
+
+/*=====  End of Grid dates  ======*/

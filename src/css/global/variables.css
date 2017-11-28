@@ -1,0 +1,57 @@
+/*=====================================
+=            Media Queries            =
+=====================================*/
+
+@custom-media --small (min-width: 490px);
+
+@custom-media --medium (min-width: 700px);
+
+@custom-media --large (min-width: 1024px);
+
+@custom-media --wide (min-width: 1280px);
+
+@custom-media --xwide (min-width: 2000px);
+
+/*=====  End of Media Queries  ======*/
+
+
+
+/*=============================
+=            Fonts            =
+=============================*/
+
+:root {
+  --font-title: TTBackwardsSans-Bold;
+  --font-body:TTBackwardsSans-Light;
+}
+
+
+/*=====  End of Fonts  ======*/
+
+
+/*==============================
+=            Colors            =
+==============================*/
+
+:root {
+--bg: #1A144F;
+--purple-dates:#0C0C41;
+--purple: #4838A5;
+--purple-muted: #584F93;
+--gold-muted:#F9C68F;
+--gold:#FFB860;
+--rose: #E55B7D;
+--rose-muted:#512D2D;
+--blue: #21A8D9;
+--blue-muted:#659EC6;
+--white: #FFFEFC;
+--gray-light: #E5E4E3;
+--gray:#514B45;
+--black-dark:#302B26;
+--black:#00002E;
+
+}
+
+/*=====  End of Colors  ======*/
+
+

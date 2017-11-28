@@ -1,0 +1,21 @@
+/*
+  You can use import statements to include partials:
+ */
+@import "global/reset.css";
+@import "global/variables.css";
+@import "global/typography.css";
+@import "global/global.css";
+
+@import "components/animations.css";
+@import "components/headings.css";
+
+
+@import "layout/header.css";
+@import "layout/footer.css";
+@import "layout/pages.css";
+@import "layout/calendar.css";
+
+
+@import "global/IE.css";
+
+

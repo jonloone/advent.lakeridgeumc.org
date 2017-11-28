@@ -1,0 +1,132 @@
+.banner {
+    height: 100vh;
+    width: 100%;
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    flex-direction: column;
+}
+
+
+.banner__wordmark {
+    position: absolute;
+    transform: translateY(-20vh);
+    z-index: 1;
+    bottom: 5vh;
+    transition: all .5s;
+    width: 60%;
+    opacity: 1;
+    @media (--medium) {
+        width: 100%;
+    }
+}
+
+.star__logo {
+    height: auto;
+    position: absolute;
+    margin: auto;
+    top: 0;
+    z-index: 1;
+    transform: translateY(30vh);
+
+    width: 10rem;
+}
+
+.stars {
+    background: url(../images/stars.svg) no-repeat;
+    background-position: center -20vh;
+    background-size: cover;
+    height: 80vh;
+    width: 100%;
+    position: fixed;
+    z-index: -10;
+    top: 0;
+    opacity: 0;
+}
+
+
+.star__burst {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: -20rem;
+    margin: auto;
+    left: -1vh;
+    right: 0;
+    opacity: 0;
+    z-index: -2;
+}
+
+
+
+
+
+.banner__background {
+
+
+    height: auto;
+    width: 100%;
+    bottom: 11vh;
+    opacity: 1;
+    position: fixed;
+    z-index: -10; // This is pretty important.
+    @media (--xwide) {
+
+        bottom: -35vh;
+    }
+
+    @media screen and (min-aspect-ratio:1/1) and (max-aspect-ratio:1/1) {}
+
+
+    .ground--back,
+    .ground--middle {
+        fill: var(--black);
+        transition: all .4s ease;
+    }
+}
+
+
+
+
+.banner__ground {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    flex-direction: column;
+    padding-bottom: 2rem;
+    background: url(../images/foreground.svg) no-repeat;
+    background-size: 102vw;
+    background-position: -2vw 2vw;
+    width: 100vw;
+  height: 25vw;
+    position: absolute;
+    bottom: 0;
+    opacity: 1;
+    left: 0;
+  
+    @media (--medium) {
+     height: 20vw;
+        flex-direction: column;
+        justify-content: center;
+    }
+
+    @media (--large) {
+           height: 30vh;
+    }
+
+}
+
+
+.banner__mary {
+    position: absolute;
+    top: -12rem;
+    left: 0;
+    right: 0;
+    margin: auto;
+    z-index: -1;
+    @media (--xwide) {
+        top: -10rem;
+    }
+}
