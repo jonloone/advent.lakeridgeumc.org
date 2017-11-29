@@ -551,6 +551,9 @@ main{
   }
 
     }
+/*=======================================
+=            Grid date style            =
+=======================================*/
 .grid-item {
 
     border-radius: 3px;
@@ -593,10 +596,6 @@ main{
     width: 100%;
     transition: all .4s ease;
 }
-.expanded.grid-item:before {
-    -webkit-transform: translateY(-100%);
-            transform: translateY(-100%);
-}
 .grid-item:after {
     content: ''; //background:#FFFEFC;
     // background:url(../images/burst.svg) no-repeat;
@@ -608,14 +607,14 @@ main{
     position: absolute;
     transition: all .4s;
 }
-/*----------  Hover effect  ----------*/
-div[class^="day-"]:hover:before,
-div[class^="day-"]:hover h1,
-div[class^="day-"]:hover .today {
-    -webkit-transform: translateY(-30%);
-            transform: translateY(-30%);
+/*----------  future present past   ----------*/
+.future{
+  background:red;
+
 }
-/*------ end --- */
+.past{
+  background:blue;
+}
 .today {
     height: 100%;
     width: 100%;
@@ -627,6 +626,22 @@ div[class^="day-"]:hover .today {
     z-index: 9999;
     position: absolute;
     transition: all .4s;
+}
+/*=====  End of Grid date style  ======*/
+/*----------  Hover effect  ----------*/
+div[class^="day-"]:hover:before,
+div[class^="day-"]:hover h1,
+div[class^="day-"]:hover .today {
+    -webkit-transform: translateY(-30%);
+            transform: translateY(-30%);
+}
+/*------ end --- */
+/*==================================
+=           Open Effect           =
+==================================*/
+.expanded.grid-item:before {
+    -webkit-transform: translateY(-100%);
+            transform: translateY(-100%);
 }
 .expanded.grid-item:after {
     content: '';
@@ -652,7 +667,10 @@ div[class^="day-"]:hover .today {
 ==================================*/
 .grid-item:nth-child(1) {
     grid-row: 1 / 1;
-    grid-column: 1 / 2
+    grid-column: 1 / 2;
+    background:url(/images/day1.svg)no-repeat, #34446A;
+    background-size:80%;
+    background-position:center
 }
 @media (min-width: 700px) {
   .grid-item:nth-child(1){

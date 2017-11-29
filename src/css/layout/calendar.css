@@ -15,7 +15,9 @@
     }
 }
 
-
+/*=======================================
+=            Grid date style            =
+=======================================*/
 
 
 .grid-item {
@@ -66,14 +68,6 @@
 
 
 
-.expanded.grid-item:before {
-    transform: translateY(-100%);
-}
-
-
-
-
-
 .grid-item:after {
     content: ''; //background:var(--white);
     // background:url(../images/burst.svg) no-repeat;
@@ -85,6 +79,38 @@
     position: absolute;
     transition: all .4s;
 }
+
+/*----------  future present past   ----------*/
+
+.future{
+  background:red;
+
+}
+
+.past{
+  background:blue;
+}
+
+.today {
+    height: 100%;
+    width: 100%;
+
+
+    background: url(../images/burst.svg) no-repeat;
+    background-size: contain;
+    background-position: center;
+    z-index: 9999;
+    position: absolute;
+    transition: all .4s;
+}
+
+/*=====  End of Grid date style  ======*/
+
+
+
+
+
+
 
 
 
@@ -101,17 +127,15 @@ div[class^="day-"]:hover .today {
 /*------ end --- */
 
 
-.today {
-    height: 100%;
-    width: 100%;
 
 
-    background: url(../images/burst.svg) no-repeat;
-    background-size: contain;
-    background-position: center;
-    z-index: 9999;
-    position: absolute;
-    transition: all .4s;
+/*==================================
+=           Open Effect           =
+==================================*/
+
+
+.expanded.grid-item:before {
+    transform: translateY(-100%);
 }
 
 
@@ -154,6 +178,9 @@ div[class^="day-"]:hover .today {
 .grid-item:nth-child(1) {
     grid-row: 1 / 1;
     grid-column: 1 / 2;
+    background:url(/images/day1.svg)no-repeat, #34446A;
+    background-size:80%;
+    background-position:center;
     @media (--medium) {
        grid-row: 1/4;
     grid-column: 1/4;
