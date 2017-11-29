@@ -16,8 +16,12 @@
     z-index: 1;
     bottom: 5vh;
     transition: all .5s;
-    width: 50%;
+    width: 80%;
     opacity: 1;
+
+   @media (--medium) {
+width:30%;
+   }
 }
 
 .star__logo {
