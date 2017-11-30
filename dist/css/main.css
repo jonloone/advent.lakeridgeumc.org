@@ -541,17 +541,16 @@ main{
     max-width: 1200px;
     margin: auto;
     background: #00002E;
-    -ms-grid-columns: (1fr)[2];
-        grid-template-columns: repeat(2, 1fr);
+    -ms-grid-columns: (1fr)[8];
+        grid-template-columns: repeat(8, 1fr);
     -ms-grid-rows: minmax(1fr, 500px);
         grid-template-rows: minmax(1fr, 500px);
-    grid-auto-rows: 30vh
+    grid-auto-rows: 10vh
 }
 @media (min-width: 700px) {
   .calendar{
         -ms-grid-columns: (1fr)[12];
             grid-template-columns: repeat(12, 1fr);
-        grid-auto-rows: 10vh;
   }
     }
 /*=======================================
@@ -669,8 +668,8 @@ div[class^="day-"]:hover .today {
 =            Grid dates            =
 ==================================*/
 .grid-item:nth-child(1) {
-    grid-row: 1 / 1;
-    grid-column: 1 / 2;
+    grid-row: 1 / 3;
+    grid-column: 1 / 5;
     background: url(/images/day1.svg)no-repeat, #34446A;
     background-size: 80%;
     background-position: center
@@ -684,7 +683,10 @@ div[class^="day-"]:hover .today {
 .grid-item:nth-child(2) {
     background: url(/images/day2.svg)no-repeat, #E55B7D;
     background-size: contain;
-    background-position: center
+    background-position: center;
+
+    grid-row: 1/4;
+    grid-column: 5/9
 }
 @media (min-width: 700px) {
   .grid-item:nth-child(2){
@@ -696,7 +698,9 @@ div[class^="day-"]:hover .today {
     background: url(/images/day3.svg)no-repeat, #659EC6;
     background-size: cover;
     background-position: 30% 16px;
-    background-position: 30% 1rem
+    background-position: 30% 1rem;
+    grid-row: 3/4;
+    grid-column: 1/5
 }
 @media (min-width: 700px) {
   .grid-item:nth-child(3){
@@ -708,7 +712,9 @@ div[class^="day-"]:hover .today {
     background: url(/images/day4.svg)no-repeat, #584F93;
     background-size: cover;
     background-position: 43% 80px;
-    background-position: 43% 5rem
+    background-position: 43% 5rem;
+    grid-row: 4/6;
+    grid-column: 1/7
 }
 @media (min-width: 700px) {
   .grid-item:nth-child(4){
@@ -741,7 +747,10 @@ div[class^="day-"]:hover .today {
     -webkit-box-orient: vertical;
     -webkit-box-direction: normal;
         -ms-flex-direction: column;
-            flex-direction: column
+            flex-direction: column;
+
+      grid-row: 10/12;
+    grid-column: 1/9
 }
 .photo-1 p{
         font-size: 16px;
@@ -773,7 +782,9 @@ div[class^="day-"]:hover .today {
 .grid-item:nth-child(6) {
     background: url(/images/day5.svg)no-repeat, #659EC6;
     background-size: 50%;
-    background-position: center
+    background-position: center;
+        grid-row: 4/6;
+    grid-column: 7/9
 }
 @media (min-width: 700px) {
   .grid-item:nth-child(6){
@@ -785,7 +796,9 @@ div[class^="day-"]:hover .today {
 .day-6 {
     background: url(/images/day6.svg)no-repeat, #34446A;
     background-size: cover;
-    background-position: center
+    background-position: center;
+        grid-row: 6/8;
+    grid-column: 1/5
 }
 @media (min-width: 700px) {
   .day-6{
@@ -796,7 +809,9 @@ div[class^="day-"]:hover .today {
 .day-7 {
     background: url(/images/day7.svg)no-repeat, #584F93;
     background-size: cover;
-    background-position: center
+    background-position: center;
+            grid-row: 6/8;
+    grid-column: 5/9
 }
 @media (min-width: 700px) {
   .day-7{
@@ -807,7 +822,9 @@ div[class^="day-"]:hover .today {
 .day-8 {
     background: url(/images/day8.svg)no-repeat, #4838A5;
     background-size: cover;
-    background-position: center
+    background-position: center;
+           grid-row: 8/10;
+    grid-column: 1/6
 }
 @media (min-width: 700px) {
   .day-8{
@@ -818,7 +835,9 @@ div[class^="day-"]:hover .today {
 .day-9 {
     background: url(/images/day9.svg)no-repeat, #584F93;
     background-size: 175%;
-    background-position: center
+    background-position: center;
+      grid-row: 8/10;
+    grid-column: 6/9
 }
 @media (min-width: 700px) {
   .day-9{
@@ -829,7 +848,9 @@ div[class^="day-"]:hover .today {
 .day-10 {
     background: url(/images/day10.svg)no-repeat, #34446A;
     background-size: 60%;
-    background-position: center
+    background-position: center;
+     grid-row: 14/16;
+    grid-column: 1/6
 }
 @media (min-width: 700px) {
   .day-10{
@@ -840,7 +861,9 @@ div[class^="day-"]:hover .today {
 .day-11 {
     background: url(/images/day11.svg)no-repeat, url(/images/day11bg.svg)no-repeat, #E55B7D;
     background-size: 30%, cover;
-    background-position: center
+    background-position: center;
+          grid-row: 14/16;
+    grid-column: 6/9
 }
 @media (min-width: 700px) {
   .day-11{
@@ -869,7 +892,10 @@ div[class^="day-"]:hover .today {
         -ms-flex-direction: row;
             flex-direction: row;
     padding: 4px;
-    padding: .25rem
+    padding: .25rem;
+       
+          grid-row: 12/14;
+    grid-column: 1/9
 }
 .worship-10 h2{
         font-weight: 100;
@@ -889,9 +915,9 @@ div[class^="day-"]:hover .today {
 @media (min-width: 700px) {
   .worship-10{
         padding: 2rem;
-            -webkit-box-align: start;
-                -ms-flex-align: start;
-                    align-items: flex-start;
+        -webkit-box-align: start;
+            -ms-flex-align: start;
+                align-items: flex-start;
         -webkit-box-pack: end;
             -ms-flex-pack: end;
                 justify-content: flex-end;
@@ -907,7 +933,9 @@ div[class^="day-"]:hover .today {
 .cta-11 {
     background: linear-gradient(45deg, rgba(12, 12, 65, 0.4), rgba(12, 12, 65, 0.4)), url(/images/day16-photo.jpg)no-repeat;
     background-size: cover;
-    background-position: center
+    background-position: center;
+        grid-row: 16/19;
+    grid-column: 6/9
 }
 @media (min-width: 700px) {
   .cta-11{
@@ -919,7 +947,9 @@ div[class^="day-"]:hover .today {
 .day-12 {
     background: url(/images/day12.svg)no-repeat, #659EC6;
     background-size: 70%;
-    background-position: center
+    background-position: center;
+      grid-row: 16/19;
+    grid-column: 1/6
 }
 @media (min-width: 700px) {
   .day-12{
@@ -928,6 +958,8 @@ div[class^="day-"]:hover .today {
   }
     }
 .day-13 {
+       grid-row: 19/21;
+    grid-column: 1/6
 }
 @media (min-width: 700px) {
   .day-13{
@@ -936,6 +968,8 @@ div[class^="day-"]:hover .today {
   }
     }
 .day-14 {
+          grid-row: 19/22;
+    grid-column: 6/9
 }
 @media (min-width: 700px) {
   .day-14{
@@ -944,6 +978,8 @@ div[class^="day-"]:hover .today {
   }
     }
 .day-15 {
+         grid-row: 21/24;
+    grid-column: 1/6
 }
 @media (min-width: 700px) {
   .day-15{
@@ -957,7 +993,9 @@ div[class^="day-"]:hover .today {
 .photo-16 {
     background: linear-gradient(45deg, rgba(12, 12, 65, 0.30000000000000004), rgba(12, 12, 65, 0.30000000000000004)), url(/images/day16-photob.jpg)no-repeat;
     background-size: cover;
-    background-position: center
+    background-position: center;
+    grid-row: 24/27;
+    grid-column: 1/9
 }
 @media (min-width: 700px) {
   .photo-16{
@@ -966,6 +1004,8 @@ div[class^="day-"]:hover .today {
   }
     }
 .day-16 {
+     grid-row: 22/24;
+    grid-column: 6/9
 }
 @media (min-width: 700px) {
   .day-16{
@@ -979,17 +1019,21 @@ div[class^="day-"]:hover .today {
 .worship-17 {
     background: linear-gradient(45deg, rgba(12, 12, 65, 0.5), rgba(12, 12, 65, 0.5)), url(/images/day17-photo.jpg)no-repeat;
     background-size: cover;
-    background-position: center
+    background-position: center;
+        grid-row: 32/34;
+    grid-column: 1/9
 }
 @media (min-width: 700px) {
   .worship-17{
-            background-size: cover, 120%;
-    background-position: center, 0 -2rem;
+        background-size: cover, 120%;
+        background-position: center, 0 -2rem;
         grid-row: 16/19;
         grid-column: 1/6;
   }
     }
 .day-17 {
+      grid-row: 27/30;
+    grid-column: 1/9
 }
 @media (min-width: 700px) {
   .day-17{
@@ -998,6 +1042,8 @@ div[class^="day-"]:hover .today {
   }
     }
 .day-18 {
+     grid-row: 30/32;
+    grid-column: 1/6
 }
 @media (min-width: 700px) {
   .day-18{
@@ -1006,6 +1052,8 @@ div[class^="day-"]:hover .today {
   }
     }
 .day-19 {
+         grid-row: 30/32;
+    grid-column: 6/9
 }
 @media (min-width: 700px) {
   .day-19{
@@ -1014,6 +1062,8 @@ div[class^="day-"]:hover .today {
   }
     }
 .day-20 {
+      grid-row: 34/36;
+    grid-column: 1/6
 }
 @media (min-width: 700px) {
   .day-20{
@@ -1022,6 +1072,8 @@ div[class^="day-"]:hover .today {
   }
     }
 .day-21 {
+          grid-row: 34/37;
+    grid-column: 6/9
 }
 @media (min-width: 700px) {
   .day-21{
@@ -1035,7 +1087,9 @@ div[class^="day-"]:hover .today {
 .photo-21 {
     background: linear-gradient(45deg, rgba(12, 12, 65, 0.4), rgba(12, 12, 65, 0.4)), url(/images/horizontalchoir.jpg)no-repeat;
     background-size: cover;
-    background-position: center
+    background-position: center;
+      grid-row: 37/39;
+    grid-column: 6/9
 }
 @media (min-width: 700px) {
   .photo-21{
@@ -1044,6 +1098,8 @@ div[class^="day-"]:hover .today {
   }
     }
 .day-22 {
+            grid-row: 36/39;
+    grid-column: 1/6
 }
 @media (min-width: 700px) {
   .day-22{
@@ -1052,6 +1108,8 @@ div[class^="day-"]:hover .today {
   }
     }
 .day-23 {
+      grid-row: 39/42;
+    grid-column: 1/9
 }
 @media (min-width: 700px) {
   .day-23{
@@ -1065,7 +1123,9 @@ div[class^="day-"]:hover .today {
 .photo-24 {
     background: linear-gradient(45deg, rgba(12, 12, 65, 0.4), rgba(12, 12, 65, 0.4)), url(/images/horizontalfamily.jpg)no-repeat;
     background-size: cover;
-    background-position: center
+    background-position: center;
+          grid-row: 42/45;
+    grid-column: 1/9
 }
 @media (min-width: 700px) {
   .photo-24{
@@ -1074,6 +1134,8 @@ div[class^="day-"]:hover .today {
   }
     }
 .day-24 {
+      grid-row: 45/48;
+    grid-column: 1/9
 }
 @media (min-width: 700px) {
   .day-24{
