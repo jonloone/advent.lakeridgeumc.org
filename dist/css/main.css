@@ -378,6 +378,9 @@ template {
 body{
 	overflow-x:hidden;
 }
+a{
+	text-decoration:none;
+}
 .home {
   background: #00002E;
 }
@@ -575,7 +578,7 @@ main{
 /*=======================================
 =            Grid date style            =
 =======================================*/
-.grid-item {
+.grid-item ,.feature {
 
 
 
@@ -598,7 +601,7 @@ main{
     transition: all .8s;
     background-position: 50% 200%
 }
-.grid-item h1{
+.grid-item h1, .feature h1{
         font-weight: 300;
         position: relative;
         z-index: 5;
@@ -664,7 +667,7 @@ main{
     width: 100%;
     opacity:1;
 
-    z-index: 9999;
+    z-index: 100;
     position: absolute;
     transition: all .5s;
     transition:background-size .4s ease;
@@ -705,9 +708,43 @@ div[class^="day-"]{
    box-shadow: inset 2px 2px 9px rgba(8, 3, 41, .94);
 }
 /*------ end --- */
+/*----------  no peek  ----------*/
+.no-peek{
+    transition:all .4s ease;
+    height:100%;
+    width:100%;
+    display:-webkit-box;
+    display:-ms-flexbox;
+    display:flex;
+    -webkit-box-align:center;
+        -ms-flex-align:center;
+            align-items:center;
+    -webkit-box-pack:center;
+        -ms-flex-pack:center;
+            justify-content:center;
+   position:absolute;
+   text-align:center;
+    z-index:1000;
+    top:0;
+    opacity:0;
+    transition:all .4s ease;
+    left:0;
+    content:'No Peeking'
+}
+.no-peek h2{
+        font-family:TTBackwardsSans-Thin;
+        color:#FFFEFC;
+        font-size:3vw;
+        font-weight:100;
+        margin:0;
+}
+/*------ end --- */
 /*==================================
 =           Open Effect           =
 ==================================*/
+.today.expanded{
+    z-index:1000;
+}
 .expanded.today:before {}
 .expanded.today:after {
     content: ''; //transform: scale(3000);
@@ -722,7 +759,7 @@ div[class^="day-"]{
     -webkit-transform: rotateX(-180deg) skew(-2deg);
             transform: rotateX(-180deg) skew(-2deg);
     box-shadow: 16px 24px 44px rgba(2, 0, 10, .24);
-    z-index:9999;
+    z-index:1000;
 }
 .today.expanded h1 {
     opacity: 0;

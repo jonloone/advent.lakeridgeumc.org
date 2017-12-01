@@ -90,48 +90,63 @@ __webpack_require__(4);
 //});
 
 
+// auto open date
+
 // JS Goes here - ES6 supported
 $(function () {
-  var date = new Date(),
-      currentDate = date.getFullYear() + "-" + (date.getMonth() + 1) + "-" + date.getDate();
-  currentDate = Date.parse(currentDate);
-  $(".grid-item").each(function () {
-    var specifiedDate = $(this).data('date');
-    specifiedDate = Date.parse(specifiedDate);
-    if (specifiedDate == currentDate) {
-      $(this).addClass("today").append('<div id="date-featured"></div>');
-    } else if (currentDate > specifiedDate) {
-      $(this).addClass('past');
-    } else {
-      $(this).addClass('future');
-    }
-  });
+    var date = new Date(),
+        currentDate = date.getFullYear() + "-" + (date.getMonth() + 1) + "-" + date.getDate();
+    currentDate = Date.parse(currentDate);
+    $(".grid-item").each(function () {
+        var specifiedDate = $(this).data('date');
+        specifiedDate = Date.parse(specifiedDate);
+        if (specifiedDate == currentDate) {
+            $(this).addClass("today").append('<div id="date-featured"></div>');
+        } else if (currentDate > specifiedDate) {
+            $(this).addClass('past');
+        } else {
+            $(this).addClass('future');
+            $(this).addClass('peek');
+            $(this).append('<div class="no-peek"><h2>No Peeking!</h2></div>');
+        }
+    });
 });
+
+// Delay scrolling
 
 $('body').addClass('stop-scrolling');
 
 $('body').bind('touchmove', function (e) {
-  e.preventDefault();
+    e.preventDefault();
 });
 
 setTimeout(function () {
-  $('body').removeClass('stop-scrolling');
-  $('body').off('touchmove', function (e) {
-    e.preventDefault();
-  });
+    $('body').removeClass('stop-scrolling');
+    $('body').off('touchmove', function (e) {
+        e.preventDefault();
+    });
 }, 3500);
 
+// open box
+
 $(function () {
-
-  $('.today').click(function () {
-
-    // Toggle the Body Class "show-nav"
-    $(this).toggleClass('expanded');
-
-    // Deactivate the default behavior of going to the next page on click 
-
-  });
+    $('.today').click(function () {
+        $(this).toggleClass('expanded');
+    });
 });
+
+//
+
+// no peek!
+
+$(function () {
+    $('.no-peek').click(function () {
+        _gsap.TweenMax.to(this, 1, { opacity: 1, repeat: 1, yoyo: true });
+        _gsap.TweenMax.to('.peek h1', 1, { opacity: 0, repeat: 1, yoyo: true });
+    });
+});
+
+// header open
 
 _gsap.TweenMax.to(".star__logo", 1, { width: "8rem", transform: "translateY(4vh)", delay: 1, ease: _gsap.Expo.easeIn });
 
