@@ -654,7 +654,8 @@ width:30%;
     z-index: 1;
     -webkit-transform: translateY(30vh);
             transform: translateY(30vh);
-
+    left:0;
+    right:0;
     width: 160px;
     width: 10rem;
 }
@@ -784,6 +785,8 @@ main{
     display: grid;
     grid-gap: 20px;
     max-width: 1200px;
+    height:100%;
+
     margin: auto;
     background: #00002E;
     -ms-grid-columns: (1fr)[8];
@@ -805,7 +808,7 @@ main{
 =            Grid date style            =
 =======================================*/
 
-.grid-item ,.feature {
+.grid-item , .feature {
 
 
 
@@ -1431,7 +1434,7 @@ opacity:1;
 }
 
 .photo-16 {
-    background: linear-gradient(45deg, rgba(12, 12, 65, 0.30000000000000004), rgba(12, 12, 65, 0.30000000000000004)), url(/images/day16-photob.jpg)no-repeat;
+    background: linear-gradient(45deg, rgba(12, 12, 65, 0.30000000000000004), rgba(12, 12, 65, 0.30000000000000004)), url(/images/vertical_pray.jpg)no-repeat;
     background-size: cover;
     background-position: center;
     grid-row: 24/27;

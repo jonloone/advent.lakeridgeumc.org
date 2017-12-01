@@ -3,6 +3,8 @@
     display: grid;
     grid-gap: 20px;
     max-width: 1200px;
+    height:100%;
+
     margin: auto;
     background: var(--black);
     grid-template-columns: repeat(8, 1fr);
@@ -21,7 +23,7 @@
 =            Grid date style            =
 =======================================*/
 
-.grid-item ,.feature {
+.grid-item , .feature {
 
 
 
@@ -567,7 +569,7 @@ opacity:1;
 }
 
 .photo-16 {
-    background: linear-gradient(45deg, color(var(--purple-dates) alpha(-70%)), color(var(--purple-dates) alpha(-70%))), url(/images/day16-photob.jpg)no-repeat;
+    background: linear-gradient(45deg, color(var(--purple-dates) alpha(-70%)), color(var(--purple-dates) alpha(-70%))), url(/images/vertical_pray.jpg)no-repeat;
     background-size: cover;
     background-position: center;
     grid-row: 24/27;

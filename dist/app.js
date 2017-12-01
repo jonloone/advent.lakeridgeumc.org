@@ -116,15 +116,8 @@ $(function () {
 
 $('body').addClass('stop-scrolling');
 
-$('body').bind('touchmove', function (e) {
-    e.preventDefault();
-});
-
 setTimeout(function () {
     $('body').removeClass('stop-scrolling');
-    $('body').off('touchmove', function (e) {
-        e.preventDefault();
-    });
 }, 3500);
 
 // open box
