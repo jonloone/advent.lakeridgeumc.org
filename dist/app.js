@@ -131,18 +131,25 @@ setTimeout(function () {
 
 $(function () {
     $('.today').click(function () {
-        $(this).toggleClass('expanded');
+        $(this).addClass('expanded');
+        $(this).find('.day__content').toggleClass('box-close');
     });
 });
+
+// close box
+
 
 //
 
 // no peek!
 
 $(function () {
-    $('.no-peek').click(function () {
-        _gsap.TweenMax.to(this, 1, { opacity: 1, repeat: 1, yoyo: true });
-        _gsap.TweenMax.to('.peek h1', 1, { opacity: 0, repeat: 1, yoyo: true });
+    $('.peek').click(function () {
+        $(this).addClass('peek-open');
+
+        setTimeout(function () {
+            $('.peek').removeClass('peek-open');
+        }, 1000);
     });
 });
 

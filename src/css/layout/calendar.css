@@ -191,7 +191,7 @@ div[class^="day-"]{
     justify-content:center;
    position:absolute;
    text-align:center;
-    z-index:1000;
+    z-index:10;
     top:0;
     opacity:0;
     transition:all .4s ease;
@@ -205,6 +205,12 @@ div[class^="day-"]{
         font-weight:100;
         margin:0;
     }
+}
+
+
+.peek.peek-open .no-peek{
+
+opacity:1;
 }
 
 /*------ end --- */

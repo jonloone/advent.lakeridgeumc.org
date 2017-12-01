@@ -25,6 +25,7 @@ $(function() {
         specifiedDate = Date.parse(specifiedDate);
         if (specifiedDate == currentDate) {
             $(this).addClass("today").append('<div id="date-featured"></div>');
+
         } else if (currentDate > specifiedDate) {
             $(this).addClass('past');
         } else {
@@ -55,10 +56,15 @@ setTimeout(
 
 $(function() {
     $('.today').click(function() {
-        $(this).toggleClass('expanded');
-
+        $(this).addClass('expanded');
+  $(this).find('.day__content').toggleClass('box-close');
     });
 });
+
+
+// close box
+
+
 
 
 //
@@ -66,15 +72,16 @@ $(function() {
 // no peek!
 
 $(function() {
-    $('.no-peek').click(function() {
-   TweenMax.to(this, 1, { opacity:1, repeat:1, yoyo:true });
- TweenMax.to('.peek h1', 1, { opacity:0, repeat:1, yoyo:true });
+    $('.peek').click(function() {
+        $(this).addClass('peek-open');
+
+setTimeout(
+    function() {
+        $('.peek').removeClass('peek-open') }, 
+        1000);
 
     });
 });
-
-
-
 
 
 

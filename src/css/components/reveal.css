@@ -1,0 +1,86 @@
+.day__content{
+
+	transform:translateY(200vh);
+	position:fixed;
+	width:100vw;
+	height:100vh;
+	z-index:99999;
+	top:0;
+	transition:all 1s ease;
+	left:0;
+	background:var(--blue-dark);
+	display:flex;
+	align-items:center;
+	justify-content:center;
+	padding:2rem;
+
+
+}
+
+
+
+
+.day__content.box-close{
+
+	transform:translateY(0vh);
+}
+
+
+/* Page content */
+
+
+.quote {
+	font-size: 5.5vh;
+	line-height: 1.25;
+	display: -webkit-box;
+	display: -ms-flexbox;
+	display: flex;
+	-webkit-box-orient: vertical;
+	-webkit-box-direction: normal;
+	-ms-flex-direction: column;
+	flex-direction: column;
+	height: 100%;
+	margin: 0 auto;
+	max-width: 800px;
+	padding: 1em;
+	-webkit-box-align: end;
+	-ms-flex-align: end;
+	align-items: flex-end;
+	-webkit-box-pack: center;
+	-ms-flex-pack: center;
+	justify-content: center;
+}
+
+.quote p {
+	font-family: var(--font-body);
+	margin: 0 0 0.5em;
+	-webkit-box-flex: 0;
+	-ms-flex: none;
+	flex: none;
+}
+
+.quote p::before {
+	content: '\201C';
+}
+
+.quote p::after {
+	content: '\201D';
+}
+
+.quote footer {
+	font-size: 0.5em;
+}
+
+.quote footer::before {
+	content: '\2014';
+}
+
+
+@media screen and (max-width: 50em) {
+	.quote {
+		font-size: 5vw;
+		text-align: center;
+		padding: 0.5em;
+	}
+}
+
