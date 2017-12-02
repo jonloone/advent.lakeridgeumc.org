@@ -112,17 +112,28 @@ TweenMax.to(".stars", .75, { opacity: "1", delay: 1.5, ease: Expo.easeIn });
 // - - - - - - - - - 
 
 
-$( function() {
+//$( function() {
 
-    $('.calendar').masonry({
-        columnWidth: '.grid-sizer',
-        percentPosition:true,
-        itemSelector: '.grid',
-        horizontalOrder: true,
-      gutter: '.gutter-sizer',
+  //  $('.calendar').masonry({
+    //    columnWidth: '.grid-sizer',
+      //  percentPosition:true,
+        //itemSelector: '.grid',
 
-    });
+   //   gutter: '.gutter-sizer',
 
+    //});
+
+//});
+
+
+$('.calendar').isotope({
+  // options
+  itemSelector: '.grid',
+  layoutMode: 'fitRows',
+  percentPosition: true,
+fitRows: {
+  gutter: '.gutter-sizer'
+},
 });
 
 

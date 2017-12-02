@@ -2178,7 +2178,7 @@ main{
 }
 
 .wrapper{
-  max-width:350px;
+max-width:400px;
   margin:auto
 }
 
@@ -2206,8 +2206,8 @@ main{
 .calendar {
 margin-top:80px;
 margin-top:5rem;
-padding:8px;
-padding:.5rem;
+padding:0px;
+padding:0rem;
 
 
 background: #00002E
@@ -2221,7 +2221,7 @@ padding:2rem;
    
     }
 
-.grid-sizer,.grid { width: 40%
+.grid-sizer,.grid { width: 45%
 
 }
 
@@ -2241,7 +2241,7 @@ width:22%;
    
     }
 
-.gutter-sizer { width: 5%
+.gutter-sizer { width: 3%
 
 }
 
@@ -2276,10 +2276,10 @@ display:flex;
 -webkit-box-pack:center;
     -ms-flex-pack:center;
         justify-content:center;
-height:270px;
+height:200px;
     background: #4838A5;
-margin-bottom:16px;
-margin-bottom:1rem;
+margin-bottom:8px;
+margin-bottom:.5rem;
     position: relative;
     color: #fff;
 
@@ -2288,6 +2288,14 @@ margin-bottom:1rem;
     transition: all .8s;
     background-position: 50% 200%
 }
+
+@media (min-width: 700px) {
+
+  .grid-item , .feature ,.grid{
+height:270px;
+margin-bottom:1rem;
+  }
+ }
 
 .grid-item h1, .feature h1, .grid h1{
         font-weight: 300;
@@ -2509,7 +2517,7 @@ opacity:1;
     background: url(/images/day1.svg)no-repeat, #34446A;
     background-size: 50%;
    
-
+width:100%;
     background-position: center
 }
 
@@ -2551,8 +2559,7 @@ opacity:1;
         -ms-flex-direction: column;
             flex-direction: column;
 
-    //grid-row: 10/12;
-    //grid-column: 1/9
+width:100%
 }
 
 .service-1 h3{
@@ -2592,7 +2599,7 @@ opacity:1;
 @media (min-width: 700px) {
 
   .service-1{
-      width:25%;
+
         //grid-row: 4/6;
         //grid-column: 1/4;
   }
@@ -2600,11 +2607,19 @@ opacity:1;
 
 .photo-1{
 
-width:45%;
+
   background:linear-gradient(45deg, rgba(12, 12, 65, 0.5), rgba(12, 12, 65, 0.5)),url(../images/intro.jpg)no-repeat;
   background-size:cover;
   background-position:center;
+width:100%
 }
+
+@media (min-width: 700px) {
+
+  .photo-1{
+width:40%;
+  }
+  }
 
 .day-2 {
     background: url(/images/day2.svg)no-repeat, #E55B7D;
@@ -2630,17 +2645,15 @@ height:350px;
      background-position: 50% -16px;
      background-position: 50% -1rem;
     background: url(/images/day3.svg)no-repeat, #659EC6;
-    background-size: cover
+    background-size: cover;
+
+
+
+   
+ 
+
+
 }
-
-@media (min-width: 700px) {
-
-  .day-3{
-      width:17%;
-        background-position: 30% 1rem;
-  }
-
-    }
 
 .day-4{
     background: url(/images/day4.svg)no-repeat, #584F93;
@@ -2648,30 +2661,34 @@ height:350px;
     background-position: 43% 80px;
     background-position: 43% 5rem;
 //width:440px
+   
 }
 
 @media (min-width: 700px) {
 
   .day-4{
-        //grid-row: 1 / 4;
-        //grid-column: 9/13;
+
+width:30%;
   }
+   
+    }
+
+@media (min-width: 1024px) {
+
+  .day-4{
+width:40%;
+  }
+   
     }
 
 .day-5 {
     background: url(/images/day5.svg)no-repeat, #659EC6;
     background-size: 50%;
-    background-position: center
+    background-position: center;
+
+
+
 }
-
-@media (min-width: 700px) {
-
-  .day-5{
-        //grid-row: 6 / 8;
-
-        //grid-column: 2/4;
-  }
-    }
 
 .day-6 {
     background: url(/images/day6.svg)no-repeat, #34446A;
@@ -2710,6 +2727,7 @@ height:350px;
 @media (min-width: 700px) {
 
   .day-8{
+width:35%;
        // grid-row: 4 / 6;
        // grid-column: 9/13;
   }
@@ -2725,6 +2743,7 @@ height:350px;
 
   .day-9{
        // grid-row: 8 / 11;
+
        // grid-column: 2/4;
   }
     }
@@ -2739,6 +2758,7 @@ height:350px;
 
   .day-10{
        // grid-row: 9 / 11;
+
        // grid-column: 4/7;
   }
     }
@@ -2753,6 +2773,8 @@ height:350px;
 
   .day-11{
      //   grid-row: 11/13;
+     width:33%;
+     height:300px;
     //    grid-column: 3/7;
   }
     }
@@ -2783,7 +2805,9 @@ height:350px;
     padding: .25rem;
 
    // grid-row: 12/14;
-   // grid-column: 1/9
+   // grid-column: 1/9;
+
+width:100%
 }
 
 .worship-10 span{
@@ -2818,7 +2842,8 @@ height:350px;
 
   .worship-10{
         padding: 2rem;
-       
+       width:45%;
+       height:400px;
         background-size: cover, cover;
         background-position: center;
        // grid-row: 6 / 10;
@@ -2869,6 +2894,7 @@ height:350px;
   .day-13{
        // grid-row: 10/14;
       //  grid-column: 10/13;
+      width:50%;
   }
     }
 
@@ -2907,6 +2933,8 @@ height:350px;
 @media (min-width: 700px) {
 
   .photo-16{
+width:40%;
+height:400px;
       //  grid-row: 13/16;
        // grid-column: 7/10;
   }
@@ -2930,13 +2958,15 @@ height:350px;
 .worship-17 {
     background: linear-gradient(45deg, rgba(12, 12, 65, 0.5), rgba(12, 12, 65, 0.5)), url(/images/day17-photo.jpg)no-repeat;
     background-size: cover;
-    background-position: center
+    background-position: center;
+width:100%
 }
 
 @media (min-width: 700px) {
 
   .worship-17{
         background-size: cover, 120%;
+        width:50%;
         background-position: center, 0 -2rem;
       //  grid-row: 16/19;
       //  grid-column: 1/6;
@@ -2950,6 +2980,8 @@ height:350px;
 
   .day-17{
      //   grid-row: 16/19;
+     width:66%;
+     height:300px;
      //   grid-column: 6/10;
   }
     }
@@ -2981,6 +3013,7 @@ height:350px;
     }
 
 .day-20 {
+height:350px
 }
 
 @media (min-width: 700px) {
@@ -3015,6 +3048,8 @@ height:350px;
 @media (min-width: 700px) {
 
   .photo-21{
+          height:600px;
+width:44%;
       //  grid-row: 23/29;
      //   grid-column: 5/13;
   }
@@ -3056,13 +3091,14 @@ height:350px;
     background-position: center;
   //  grid-row: 42/45;
   //  grid-column: 1/9;
-  height:300px
+  height:350px
 }
 
 @media (min-width: 700px) {
 
   .photo-24{
    //     grid-row: 32/37;
+   width:60%;
   //      grid-column: 1/13;
   }
     }

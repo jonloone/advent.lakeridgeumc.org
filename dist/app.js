@@ -174,16 +174,28 @@ _gsap.TweenMax.to(".stars", .75, { opacity: "1", delay: 1.5, ease: _gsap.Expo.ea
 // - - - - - - - - - 
 
 
-$(function () {
+//$( function() {
 
-    $('.calendar').masonry({
-        columnWidth: '.grid-sizer',
-        percentPosition: true,
-        itemSelector: '.grid',
-        horizontalOrder: true,
+//  $('.calendar').masonry({
+//    columnWidth: '.grid-sizer',
+//  percentPosition:true,
+//itemSelector: '.grid',
+
+//   gutter: '.gutter-sizer',
+
+//});
+
+//});
+
+
+$('.calendar').isotope({
+    // options
+    itemSelector: '.grid',
+    layoutMode: 'fitRows',
+    percentPosition: true,
+    fitRows: {
         gutter: '.gutter-sizer'
-
-    });
+    }
 });
 
 /***/ }),

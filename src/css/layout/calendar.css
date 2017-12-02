@@ -1,5 +1,5 @@
 .wrapper{
-  max-width:350px;
+max-width:400px;
   margin:auto;
 
       @media (--small) {
@@ -17,7 +17,7 @@
 
 .calendar {
 margin-top:5rem;
-padding:.5rem;
+padding:0rem;
 
 
 background: var(--black);
@@ -29,7 +29,7 @@ padding:2rem;
 }
 
 
-.grid-sizer,.grid { width: 40%;  
+.grid-sizer,.grid { width: 45%;  
 
     @media (--medium) {
 width:30%;
@@ -43,7 +43,7 @@ width:22%;
 
 }
 
-.gutter-sizer { width: 5%; 
+.gutter-sizer { width: 3%; 
 
  @media (--medium) {
 width:4%;
@@ -64,9 +64,9 @@ width:3%;
 display:flex;
 align-items:center;
 justify-content:center;
-height:270px;
+height:200px;
     background: var(--purple);
-margin-bottom:1rem;
+margin-bottom:.5rem;
     position: relative;
     color: #fff;
 
@@ -75,7 +75,10 @@ margin-bottom:1rem;
     transition: all .8s;
     background-position: 50% 200%;
  
-
+ @media (--medium) {
+height:270px;
+margin-bottom:1rem;
+ }
 
     & h1 {
         font-weight: 300;
@@ -314,7 +317,7 @@ opacity:1;
     background: url(/images/day1.svg)no-repeat, var(--blue-dark);
     background-size: 50%;
    
-
+width:100%;
     background-position: center;
     @media (--medium) {
         //grid-row: 1/4;
@@ -371,10 +374,9 @@ opacity:1;
         margin-top: 1rem;
     }
 
-    //grid-row: 10/12;
-    //grid-column: 1/9;
+width:100%;
     @media (--medium) {
-      width:25%;
+
         //grid-row: 4/6;
         //grid-column: 1/4;
     }
@@ -383,10 +385,14 @@ opacity:1;
 
 .photo-1{
 
-width:45%;
+
   background:linear-gradient(45deg, color(var(--purple-dates) alpha(-50%)), color(var(--purple-dates) alpha(-50%))),url(../images/intro.jpg)no-repeat;
   background-size:cover;
   background-position:center;
+width:100%;
+  @media (--medium) {
+width:40%;
+  }
 }
 
 .day-2 {
@@ -414,11 +420,8 @@ height:350px;
 
    
  
-    @media (--medium) {
-      width:17%;
-        background-position: 30% 1rem;
 
-    }
+
 }
 
 .day-4{
@@ -428,10 +431,18 @@ height:350px;
 //width:440px;
 
 
+
     @media (--medium) {
-        //grid-row: 1 / 4;
-        //grid-column: 9/13;
+
+width:30%;
+   
     }
+
+      @media (--large) {
+width:40%;
+   
+    }
+   
 }
 
 
@@ -442,11 +453,7 @@ height:350px;
     background-position: center;
 
 
-    @media (--medium) {
-        //grid-row: 6 / 8;
 
-        //grid-column: 2/4;
-    }
 }
 
 
@@ -483,6 +490,7 @@ height:350px;
 
 
     @media (--medium) {
+width:35%;
        // grid-row: 4 / 6;
        // grid-column: 9/13;
     }
@@ -495,6 +503,7 @@ height:350px;
 
     @media (--medium) {
        // grid-row: 8 / 11;
+
        // grid-column: 2/4;
     }
 }
@@ -507,6 +516,7 @@ height:350px;
 
     @media (--medium) {
        // grid-row: 9 / 11;
+
        // grid-column: 4/7;
     }
 }
@@ -519,6 +529,8 @@ height:350px;
 
     @media (--medium) {
      //   grid-row: 11/13;
+     width:33%;
+     height:300px;
     //    grid-column: 3/7;
     }
 }
@@ -564,10 +576,11 @@ height:350px;
         }
     }
 
-
+width:100%;
     @media (--medium) {
         padding: 2rem;
-       
+       width:45%;
+       height:400px;
         background-size: cover, cover;
         background-position: center;
        // grid-row: 6 / 10;
@@ -609,6 +622,7 @@ height:350px;
     @media (--medium) {
        // grid-row: 10/14;
       //  grid-column: 10/13;
+      width:50%;
     }
 }
 
@@ -641,6 +655,8 @@ height:350px;
 
 
     @media (--medium) {
+width:40%;
+height:400px;
       //  grid-row: 13/16;
        // grid-column: 7/10;
     }
@@ -663,9 +679,10 @@ height:350px;
     background: linear-gradient(45deg, color(var(--purple-dates) alpha(-50%)), color(var(--purple-dates) alpha(-50%))), url(/images/day17-photo.jpg)no-repeat;
     background-size: cover;
     background-position: center;
-
+width:100%;
     @media (--medium) {
         background-size: cover, 120%;
+        width:50%;
         background-position: center, 0 -2rem;
       //  grid-row: 16/19;
       //  grid-column: 1/6;
@@ -677,6 +694,8 @@ height:350px;
 
     @media (--medium) {
      //   grid-row: 16/19;
+     width:66%;
+     height:300px;
      //   grid-column: 6/10;
     }
 }
@@ -702,7 +721,7 @@ height:350px;
 }
 
 .day-20 {
-
+height:350px;
     @media (--medium) {
     //    grid-row: 19/23;
      //   grid-column: 9/13;
@@ -728,6 +747,8 @@ height:350px;
     background-position: center;
 
     @media (--medium) {
+          height:600px;
+width:44%;
       //  grid-row: 23/29;
      //   grid-column: 5/13;
     }
@@ -766,9 +787,10 @@ height:350px;
     background-position: center;
   //  grid-row: 42/45;
   //  grid-column: 1/9;
-  height:300px;
+  height:350px;
     @media (--medium) {
    //     grid-row: 32/37;
+   width:60%;
   //      grid-column: 1/13;
     }
 }
