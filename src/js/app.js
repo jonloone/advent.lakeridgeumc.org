@@ -51,6 +51,7 @@ $(function() {
     $('.today').click(function() {
         $(this).addClass('expanded');
   $(this).find('.day__content').toggleClass('box-close');
+      $('.home').toggleClass('no-scroll');
     });
 });
 
@@ -61,6 +62,7 @@ $(function() {
     $('.past').click(function() {
         $(this).addClass('expanded');
   $(this).find('.day__content').toggleClass('box-close');
+    $('.home').toggleClass('no-scroll');
     });
 });
 

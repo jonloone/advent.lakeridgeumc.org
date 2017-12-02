@@ -1,18 +1,27 @@
+.no-scroll{
+	overflow:hidden;
+
+}
+
+
+
 .day__content{
 
 	transform:translateY(200vh);
 	position:fixed;
 	width:100vw;
-	height:100vh;
-	   z-index: var(--max);
-	top:0;
+	min-height:100vh;
+	   z-index: 99999999;
+
 	transition:all 1s ease;
-	left:0;
+
 	background:var(--blue-dark);
 	display:flex;
 	align-items:center;
 	justify-content:center;
 	padding:2rem;
+overflow-y: scroll;
+   top: 0; right: 0; bottom: 0; left: 0; 
 
 
 }
@@ -29,58 +38,56 @@
 /* Page content */
 
 
-.quote {
-	font-size: 5.5vh;
-	line-height: 1.25;
-	display: -webkit-box;
-	display: -ms-flexbox;
-	display: flex;
-	-webkit-box-orient: vertical;
-	-webkit-box-direction: normal;
-	-ms-flex-direction: column;
-	flex-direction: column;
-	height: 100%;
-	margin: 0 auto;
-	max-width: 800px;
-	padding: 1em;
-	-webkit-box-align: end;
-	-ms-flex-align: end;
-	align-items: flex-end;
-	-webkit-box-pack: center;
-	-ms-flex-pack: center;
-	justify-content: center;
+.quote{
+	width:50%;
+	display:flex;
+	align-items:center;
+	justify-content:center;
+	flex-direction:column;
 }
+
 
 .quote p {
+	font-family:var(--font-body);
+	font-size:1.25rem;
+	letter-spacing:2px;
+	color:var(--black);
+}
+
+p.quote__intro {
 	font-family: var(--font-body);
-	margin: 0 0 0.5em;
-	-webkit-box-flex: 0;
-	-ms-flex: none;
-	flex: none;
+	font-size:2vw;
+	color:var(--gold-muted);
 }
 
-.quote p::before {
-	content: '\201C';
-}
 
-.quote p::after {
-	content: '\201D';
-}
-
-.quote footer {
-	font-size: 0.5em;
-}
-
-.quote footer::before {
-	content: '\2014';
-}
 
 
 @media screen and (max-width: 50em) {
-	.quote {
+	.quote__intro {
 		font-size: 5vw;
 		text-align: center;
 		padding: 0.5em;
+	}
+}
+
+
+
+
+.day-2 .day__content{
+	background:var(--rose);
+}
+
+.day-3 .day__content{
+	background:var(--blue);
+
+	& .quote__intro{
+	color:var(--blue-dark);
+	}
+
+	& img{
+		width:40%;
+		
 	}
 }
 
