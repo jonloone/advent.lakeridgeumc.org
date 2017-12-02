@@ -180,12 +180,11 @@ $(function () {
         columnWidth: '.grid-sizer',
         percentPosition: true,
         itemSelector: '.grid',
+        horizontalOrder: true,
         gutter: '.gutter-sizer'
 
     });
 });
-
-$('#featured-page').masonry();
 
 /***/ }),
 /* 2 */

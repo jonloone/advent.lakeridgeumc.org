@@ -1795,7 +1795,7 @@ body[data-aos-easing=ease-in-out-quart] [data-aos] {
 @media (min-width: 700px) {
 
   .banner__quote blockquote:before{
-            font-size:8rem;
+            font-size:6rem;
                 top:30px;
     left:-50px;
   }
@@ -1821,7 +1821,7 @@ body[data-aos-easing=ease-in-out-quart] [data-aos] {
 @media (min-width: 700px) {
 
   .banner__quote blockquote:after{
-            font-size:8rem;
+            font-size:6rem;
             bottom:-40px;
     right:-50px;
   }
@@ -2177,41 +2177,87 @@ main{
   position:relative;
 }
 
+.wrapper{
+  max-width:350px;
+  margin:auto
+}
+
+@media (min-width: 490px) {
+
+  .wrapper{
+ max-width:450px;
+  }
+      }
+
+@media (min-width: 700px) {
+
+  .wrapper{
+ max-width:900px;
+  }
+      }
+
+@media (min-width: 1024px) {
+
+  .wrapper{
+ max-width:1200px;
+  }
+      }
+
 .calendar {
 margin-top:80px;
 margin-top:5rem;
-height:100%;
+padding:8px;
+padding:.5rem;
 
-padding:32px;
-padding:2rem;
+
 background: #00002E
 }
 
 @media (min-width: 700px) {
 
   .calendar{
-
-   //     grid-template-columns: repeat(12, 1fr);
+padding:2rem;
   }
+   
     }
 
-.grid-sizer,
-.grid-item { 
-
-width:50%
-
+.grid-sizer,.grid { width: 40%
 
 }
 
 @media (min-width: 700px) {
 
-  .grid-sizer,
-.grid-item{
-        width: 22%;
-  }  
-      }
+  .grid-sizer,.grid{
+width:30%;
+  }
+   
+    }
 
-.gutter-sizer { width: 3%; }
+@media (min-width: 1024px) {
+
+  .grid-sizer,.grid{
+width:22%;
+  }
+   
+    }
+
+.gutter-sizer { width: 5%
+
+}
+
+@media (min-width: 700px) {
+
+  .gutter-sizer{
+width:4%;
+  }
+ }
+
+@media (min-width: 1024px) {
+
+  .gutter-sizer{
+width:3%;
+  }
+ }
 
 /*=======================================
 =            Grid date style            =
@@ -2230,12 +2276,13 @@ display:flex;
 -webkit-box-pack:center;
     -ms-flex-pack:center;
         justify-content:center;
-
+height:270px;
     background: #4838A5;
-
+margin-bottom:16px;
+margin-bottom:1rem;
     position: relative;
     color: #fff;
-    margin-bottom: 24px;
+
     border-radius: 1px;
     cursor: pointer;
     transition: all .8s;
@@ -2461,7 +2508,7 @@ opacity:1;
     //grid-column: 1 / 5;
     background: url(/images/day1.svg)no-repeat, #34446A;
     background-size: 50%;
-    height:270px;
+   
 
     background-position: center
 }
@@ -2491,7 +2538,7 @@ opacity:1;
     display: flex;
     padding: 32px;
     padding: 2rem;
-      width:25%;
+
       //height:316px;
     -webkit-box-align: start;
         -ms-flex-align: start;
@@ -2545,14 +2592,15 @@ opacity:1;
 @media (min-width: 700px) {
 
   .service-1{
+      width:25%;
         //grid-row: 4/6;
         //grid-column: 1/4;
   }
     }
 
 .photo-1{
-  width:50%;
-  height:370px;
+
+width:45%;
   background:linear-gradient(45deg, rgba(12, 12, 65, 0.5), rgba(12, 12, 65, 0.5)),url(../images/intro.jpg)no-repeat;
   background-size:cover;
   background-position:center;
@@ -2562,8 +2610,8 @@ opacity:1;
     background: url(/images/day2.svg)no-repeat, #E55B7D;
     background-size: contain;
     background-position: center;
+height:350px;
 
-    height:350px;
 
 
     //grid-row: 1/4;
@@ -2582,13 +2630,13 @@ opacity:1;
      background-position: 50% -16px;
      background-position: 50% -1rem;
     background: url(/images/day3.svg)no-repeat, #659EC6;
-    background-size: cover;
-width:17%
+    background-size: cover
 }
 
 @media (min-width: 700px) {
 
   .day-3{
+      width:17%;
         background-position: 30% 1rem;
   }
 
@@ -2599,9 +2647,7 @@ width:17%
     background-size: cover;
     background-position: 43% 80px;
     background-position: 43% 5rem;
-//width:440px;
-
-   width:33%
+//width:440px
 }
 
 @media (min-width: 700px) {
@@ -2615,8 +2661,7 @@ width:17%
 .day-5 {
     background: url(/images/day5.svg)no-repeat, #659EC6;
     background-size: 50%;
-    background-position: center;
-width:17%
+    background-position: center
 }
 
 @media (min-width: 700px) {
@@ -2631,9 +2676,7 @@ width:17%
 .day-6 {
     background: url(/images/day6.svg)no-repeat, #34446A;
     background-size: cover;
-    background-position: center;
-
-height:315px
+    background-position: center
 }
 
 @media (min-width: 700px) {
@@ -2647,8 +2690,7 @@ height:315px
 .day-7 {
     background: url(/images/day7.svg)no-repeat, #584F93;
     background-size: cover;
-    background-position: center;
-width:12%
+    background-position: center
 }
 
 @media (min-width: 700px) {
@@ -2662,8 +2704,7 @@ width:12%
 .day-8 {
     background: url(/images/day8.svg)no-repeat, #4838A5;
     background-size: cover;
-    background-position: center;
-width:30%
+    background-position: center
 }
 
 @media (min-width: 700px) {
@@ -2677,8 +2718,7 @@ width:30%
 .day-9 {
     background: url(/images/day9.svg)no-repeat, url(/images/day9-bg.svg)no-repeat, #584F93;
     background-size: 80%, cover, cover;
-    background-position: center;
-//width:270px
+    background-position: center
 }
 
 @media (min-width: 700px) {
@@ -2692,9 +2732,7 @@ width:30%
 .day-10 {
     background: url(/images/day10.svg)no-repeat, #34446A;
     background-size: 60%;
-    background-position: center;
-//width:247px;
-height:335px
+    background-position: center
 }
 
 @media (min-width: 700px) {
@@ -2708,9 +2746,7 @@ height:335px
 .day-11 {
     background: url(/images/day11.svg)no-repeat, url(/images/day11bg.svg)no-repeat, #E55B7D;
     background-size: 30%, cover;
-    background-position: center;
-//width:310px;
-height:300px
+    background-position: center
 }
 
 @media (min-width: 700px) {
@@ -2726,8 +2762,7 @@ height:300px
 }
 
 .worship-10 {
-  //width:580px;
-  height:370px;
+
     background: linear-gradient(45deg, rgba(12, 12, 65, 0.7), rgba(12, 12, 65, 0.7)), url(/images/day-1--photo.jpg)no-repeat;
     background-size: cover;
     background-position: center;
@@ -2815,9 +2850,7 @@ height:300px
 .day-12 {
     background: url(/images/day12.svg)no-repeat, #659EC6;
     background-size: 70%;
-    background-position: center;
-//width:313px;
-height:290px
+    background-position: center
 }
 
 @media (min-width: 700px) {
@@ -2829,8 +2862,6 @@ height:290px
     }
 
 .day-13 {
-////width:250px;
-height:285px
 }
 
 @media (min-width: 700px) {
@@ -2842,8 +2873,6 @@ height:285px
     }
 
 .day-14 {
-//width:230px;
-height:315px
 }
 
 @media (min-width: 700px) {
@@ -2855,8 +2884,6 @@ height:315px
     }
 
 .day-15 {
-//width:290px;
-height:290px
 }
 
 @media (min-width: 700px) {
@@ -2874,8 +2901,7 @@ height:290px
 .photo-16 {
     background: linear-gradient(45deg, rgba(12, 12, 65, 0.30000000000000004), rgba(12, 12, 65, 0.30000000000000004)), url(/images/vertical_pray.jpg)no-repeat;
     background-size: cover;
-    background-position: center;
-//width:237px
+    background-position: center
 }
 
 @media (min-width: 700px) {
@@ -2887,8 +2913,6 @@ height:290px
     }
 
 .day-16 {
-//width:570px;
-height:335px
 }
 
 @media (min-width: 700px) {
@@ -2906,9 +2930,7 @@ height:335px
 .worship-17 {
     background: linear-gradient(45deg, rgba(12, 12, 65, 0.5), rgba(12, 12, 65, 0.5)), url(/images/day17-photo.jpg)no-repeat;
     background-size: cover;
-    background-position: center;
-//width:777px;
-height:335px
+    background-position: center
 }
 
 @media (min-width: 700px) {
@@ -2922,8 +2944,6 @@ height:335px
     }
 
 .day-17 {
- //width:250px;
- height:290px
 }
 
 @media (min-width: 700px) {
@@ -2935,13 +2955,10 @@ height:335px
     }
 
 .wreath-17{
-  //width:250px;
-  height:290px;
+
 }
 
 .day-18 {
-//width:370px;
-height:370px
 }
 
 @media (min-width: 700px) {
@@ -2953,8 +2970,6 @@ height:370px
     }
 
 .day-19 {
-height:370px;
-//width:370px
 }
 
 @media (min-width: 700px) {
@@ -2966,8 +2981,6 @@ height:370px;
     }
 
 .day-20 {
-height:370px;
-//width:370px
 }
 
 @media (min-width: 700px) {
@@ -2979,8 +2992,6 @@ height:370px;
     }
 
 .day-21 {
- //width:372px;
- height:590px
 }
 
 @media (min-width: 700px) {
@@ -2998,9 +3009,7 @@ height:370px;
 .photo-21 {
     background: linear-gradient(45deg, rgba(12, 12, 65, 0.4), rgba(12, 12, 65, 0.4)), url(/images/horizontalchoir.jpg)no-repeat;
     background-size: cover;
-    background-position: center;
-//width:777px;
-height:777px
+    background-position: center
 }
 
 @media (min-width: 700px) {
@@ -3012,13 +3021,10 @@ height:777px
     }
 
 .cta-21{
-  //width:370px;
-  height:475px;
+
 }
 
 .day-22 {
-//width:380px;
-height:600px
 }
 
 @media (min-width: 700px) {
@@ -3030,8 +3036,6 @@ height:600px
     }
 
 .day-23 {
- //width:765px;
- height:440px
 }
 
 @media (min-width: 700px) {
@@ -3051,7 +3055,8 @@ height:600px
     background-size: cover;
     background-position: center;
   //  grid-row: 42/45;
-  //  grid-column: 1/9
+  //  grid-column: 1/9;
+  height:300px
 }
 
 @media (min-width: 700px) {
@@ -3063,8 +3068,6 @@ height:600px
     }
 
 .day-24 {
-//width:777px;
-height:777px
 }
 
 @media (min-width: 700px) {

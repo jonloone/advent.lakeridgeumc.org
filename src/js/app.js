@@ -118,6 +118,7 @@ $( function() {
         columnWidth: '.grid-sizer',
         percentPosition:true,
         itemSelector: '.grid',
+        horizontalOrder: true,
       gutter: '.gutter-sizer',
 
     });
@@ -126,5 +127,4 @@ $( function() {
 
 
 
-$('#featured-page').masonry();
 
