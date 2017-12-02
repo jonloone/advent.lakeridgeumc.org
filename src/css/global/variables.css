@@ -12,6 +12,8 @@
 
 @custom-media --xwide (min-width: 2000px);
 
+@custom-media --small-only (max-width: 490px);
+
 /*=====  End of Media Queries  ======*/
 
 
