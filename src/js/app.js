@@ -1,17 +1,10 @@
 // JS Goes here - ES6 supported
 import { Expo, TweenMax } from "gsap";
 import 'smoothstate';
+import AOS from 'AOS';
 
+ AOS.init();
 
-
-
-//$(function() {
-//   var d =new Date();
-//  var curmonth = d.getMonth()+1;
-// var curDate = d.getFullYear()+"-"+curmonth+"-"+d.getDate();
-
-//    $(".grid-item[data-date="+curDate+"]").append('<div id="date-featured"></div>').find('#date-featured').addClass("today");
-//});
 
 
 // auto open date
@@ -58,18 +51,30 @@ $(function() {
     $('.today').click(function() {
         $(this).addClass('expanded');
   $(this).find('.day__content').toggleClass('box-close');
+      $('.home').toggleClass('no-scroll');
     });
 });
 
 
-// close box
+// open past
 
-
+$(function() {
+    $('.past').click(function() {
+        $(this).addClass('expanded');
+  $(this).find('.day__content').toggleClass('box-close');
+    $('.home').toggleClass('no-scroll');
+    });
+});
 
 
 //
 
-// no peek!
+
+
+
+$(window).resize(function(){
+    if ($(window).width() < 700){  
+    // no peek!
 
 $(function() {
     $('.peek').click(function() {
@@ -83,6 +88,8 @@ setTimeout(
     });
 });
 
+    }   
+});
 
 
 // header open
@@ -93,10 +100,44 @@ TweenMax.to(".star__burst", .85, { opacity: "1", delay: 1.5, ease: Expo.easeIn }
 TweenMax.to(".ground--back", 1, { fill: "#272067", delay: 1, ease: Expo.easeIn });
 TweenMax.to(".ground--middle", 1, { fill: "#1E1759", delay: 1, ease: Expo.easeIn });
 TweenMax.to(".home", .85, { backgroundColor: "#1A144F", delay: 1.5, ease: Expo.easeIn });
+TweenMax.to(".banner__title", .85, { opacity:"1", delay: 2, ease: Expo.easeIn });
+
 
 
 
 TweenMax.to(".banner__wordmark", .5, { transform: "translateY(0vh)", opacity: "0", delay: 1, ease: Expo.easeIn });
 TweenMax.to(".stars", .75, { opacity: "1", delay: 1.5, ease: Expo.easeIn });
-//TweenMax.to(".banner__ground", .75, {  opacity:"1",delay:4.25,ease:Expo.easeIn});
-//TweenMax.to(".banner__background", .75, {  opacity:"1",delay:3.5,ease:Expo.easeIn});
+
+
+//masonry
+
+// - - - - - - - - - 
+
+
+//$( function() {
+
+  //  $('.calendar').masonry({
+    //    columnWidth: '.grid-sizer',
+      //  percentPosition:true,
+        //itemSelector: '.grid',
+
+   //   gutter: '.gutter-sizer',
+
+    //});
+
+//});
+
+
+$('.calendar').isotope({
+  // options
+  itemSelector: '.grid',
+  layoutMode: 'fitRows',
+  percentPosition: true,
+fitRows: {
+  gutter: '.gutter-sizer'
+},
+});
+
+
+
+

@@ -12,6 +12,8 @@
 
 @custom-media --xwide (min-width: 2000px);
 
+@custom-media --small-only (max-width: 490px);
+
 /*=====  End of Media Queries  ======*/
 
 
@@ -21,10 +23,9 @@
 =============================*/
 
 :root {
-  --font-title: TTBackwardsSans-Bold;
-  --font-body:TTBackwardsSans-Light;
-  --font-script:TTBackwardsScript-Light;
-  --font-thin:TTBackwardsSans-Thin;
+  --font-title: 'TrendSansOne';
+  --font-body:"Klang W01";
+
 }
 
 
@@ -39,6 +40,7 @@
 --bg: #1A144F;
 --purple-dates:#0C0C41;
 --purple: #4838A5;
+--purple-bright:#45379C;
 --purple-muted: #584F93;
 --gold-muted:#F9C68F;
 --gold:#FFB860;
@@ -57,4 +59,14 @@
 
 /*=====  End of Colors  ======*/
 
+/*==============================
+=           z index            =
+==============================*/
+
+:root {
+ --below: -1;
+ --normal: 10;
+ --above: 100;
+ --max:999999;
+}
 

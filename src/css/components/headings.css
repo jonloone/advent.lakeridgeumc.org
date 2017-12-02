@@ -1,0 +1,81 @@
+
+.banner__quote{
+  width:100%;
+  position:Relative;
+  height:auto;
+  min-height:20vh;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  top:-8vw;
+  overflow:hidden;
+      z-index:var(--above);
+
+
+
+& blockquote{
+    color:var(--purple-bright);
+    font-family:var(--font-body);
+    font-size:1rem;
+    line-height:1rem;
+    letter-spacing: 2px;
+    max-width:60%;
+    position:Relative;
+    text-align:center;
+    position:relative;
+  
+    z-index:var(--above);
+    font-weight:100;
+
+        @media (--medium) {
+    font-size:1.5rem;
+
+    line-height:2rem;
+    letter-spacing: 2px;
+        max-width:50%;
+        }
+
+  @media (--large) {
+       max-width:35%;
+
+  }
+
+}
+
+& blockquote:before{
+    content:"\201C";
+    font-size:5rem;
+      position:absolute;
+  left:-40px;
+  top:20px;
+     @media (--medium) {
+            font-size:6rem;
+                top:30px;
+    left:-50px;
+     }
+
+      @media (--large) {
+        left:-60px;
+
+      }
+}
+
+& blockquote:after{
+    content:"\201D";
+    font-size:5rem;
+      position:absolute;
+    bottom:-20px;
+    right:-40px;
+     @media (--medium) {
+            font-size:6rem;
+            bottom:-40px;
+    right:-50px;
+     }
+
+       @media (--large) {
+       right:-60px;
+
+      }
+}
+
+}
