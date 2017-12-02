@@ -1,14 +1,14 @@
-@import url("//hello.myfonts.net/count/3545e3");
+@import url("//hello.myfonts.net/count/3548cd");
 
   
-@font-face {font-family: 'TTBackwardsSans-Thin';src: url('../webfonts/3545E3_0_0.eot');src: url('../webfonts/3545E3_0_0.eot?#iefix') format('embedded-opentype'),url('../webfonts/3545E3_0_0.woff2') format('woff2'),url('../webfonts/3545E3_0_0.woff') format('woff'),url('../webfonts/3545E3_0_0.ttf') format('truetype'),url('../webfonts/3545E3_0_0.svg#wf') format('svg');}
- 
-  
-@font-face {font-family: 'TTBackwardsSans-Bold';src: url('../webfonts/3545E3_1_0.eot');src: url('../webfonts/3545E3_1_0.eot?#iefix') format('embedded-opentype'),url('../webfonts/3545E3_1_0.woff2') format('woff2'),url('../webfonts/3545E3_1_0.woff') format('woff'),url('../webfonts/3545E3_1_0.ttf') format('truetype'),url('../webfonts/3545E3_1_0.svg#wf') format('svg');}
- 
-  
-@font-face {font-family: 'TTBackwardsSans-Light';src: url('../webfonts/3545E3_2_0.eot');src: url('../webfonts/3545E3_2_0.eot?#iefix') format('embedded-opentype'),url('../webfonts/3545E3_2_0.woff2') format('woff2'),url('../webfonts/3545E3_2_0.woff') format('woff'),url('../webfonts/3545E3_2_0.ttf') format('truetype'),url('../webfonts/3545E3_2_0.svg#wf') format('svg');}
- 
-  
-@font-face {font-family: 'TTBackwardsScript-Light';src: url('../webfonts/3545E3_3_0.eot');src: url('../webfonts/3545E3_3_0.eot?#iefix') format('embedded-opentype'),url('../webfonts/3545E3_3_0.woff2') format('woff2'),url('../webfonts/3545E3_3_0.woff') format('woff'),url('../webfonts/3545E3_3_0.ttf') format('truetype'),url('../webfonts/3545E3_3_0.svg#wf') format('svg');}
+@font-face {font-family: 'TrendSansOne';src: url('../webfonts/3548CD_0_0.eot');src: url('../webfonts/3548CD_0_0.eot?#iefix') format('embedded-opentype'),url('../webfonts/3548CD_0_0.woff2') format('woff2'),url('../webfonts/3548CD_0_0.woff') format('woff'),url('../webfonts/3548CD_0_0.ttf') format('truetype');}
+
+
+
+@import url("http://fast.fonts.net/t/1.css?apiType=css&projectid=5c8d5307-080e-4a74-90e6-d4c9d0c99c05");
+    @font-face{
+        font-family:"Klang W01";
+        src:url("../webfonts/7e3760d0-1767-4195-9f6d-fabdf91be0ca.eot?#iefix");
+        src:url("../webfonts/7e3760d0-1767-4195-9f6d-fabdf91be0ca.eot?#iefix") format("eot"),url("../webfonts/5ed1fd3c-5fa8-4b16-831f-29abd6a8631d.woff2") format("woff2"),url("../webfonts/cddac412-1b5b-4910-aed1-ac66c529913a.woff") format("woff"),url("../webfonts/4c53ee65-cb9d-4e09-8d45-d4bd222103f5.ttf") format("truetype"),url("../webfonts/848a5cb0-1a05-47a9-8c07-1790413bff8c.svg#848a5cb0-1a05-47a9-8c07-1790413bff8c") format("svg");
+    }
  

@@ -1,41 +1,46 @@
 .calendar {
-    padding: 2rem;
-    display: grid;
-    grid-gap: 20px;
-    max-width: 1200px;
-    height:100%;
+margin-top:5rem;
+height:100%;
 
-    margin: auto;
-    background: var(--black);
-    grid-template-columns: repeat(8, 1fr);
-    grid-template-rows: minmax(1fr, 500px);
-    grid-auto-rows: 10vh;
+padding:2rem;
+background: var(--black);
+
     @media (--medium) {
-        grid-template-columns: repeat(12, 1fr);
+
+   //     grid-template-columns: repeat(12, 1fr);
     }
 }
 
 
+.grid-sizer,
+.grid-item { 
+
+width:50%;
+      @media (--medium) {
+        width: 22%;  
+      }
 
 
+}
+
+.gutter-sizer { width: 3%; }
 
 /*=======================================
 =            Grid date style            =
 =======================================*/
 
-.grid-item , .feature {
+.grid-item , .feature ,.grid{
 
-
+display:flex;
+align-items:center;
+justify-content:center;
 
     background: var(--purple);
-    font-size: 250%;
+
     position: relative;
     color: #fff;
-    display: flex;
-    width: auto;
-    height: 100%;
-    align-items: center;
-    justify-content: center;
+    margin-bottom: 24px;
+    border-radius: 1px;
     cursor: pointer;
     transition: all .8s;
     background-position: 50% 200%;
@@ -45,9 +50,11 @@
     & h1 {
         font-weight: 300;
         position: relative;
-        z-index: 5;
+           z-index: var(--normal);
         transition: all .5s ease;
-        font-family: var(--font-body);
+        font-family: var(--font-title);
+        font-size:5vw;
+        letter-spacing:-1px;
         color: var(--purple-muted);
         margin: 0;
         transition-delay: .25s;
@@ -69,7 +76,7 @@
 .grid-item:before {
     content: '';
     background: var(--purple-dates);
-    z-index: 2;
+       z-index: var(--normal);
     position: absolute;
     perspective: 800px;
     top: 0;
@@ -130,7 +137,7 @@
     width: 100%;
     opacity:1;
 
-    z-index: 100;
+       z-index: var(--normal);
     position: absolute;
     transition: all .5s;
     transition:background-size .4s ease;
@@ -193,7 +200,7 @@ div[class^="day-"]{
     justify-content:center;
    position:absolute;
    text-align:center;
-    z-index:10;
+       z-index: var(--above);
     top:0;
     opacity:0;
     transition:all .4s ease;
@@ -201,7 +208,7 @@ div[class^="day-"]{
     content:'No Peeking';
 
     & h2 {
-        font-family:var(--font-thin);
+        font-family:var(--font-title);
         color:var(--white);
         font-size:3vw;
         font-weight:100;
@@ -222,7 +229,7 @@ opacity:1;
 ==================================*/
 
 .today.expanded{
-    z-index:1000;
+    z-index: var(--max);
 }
 
 .expanded.today:before {}
@@ -238,7 +245,7 @@ opacity:1;
 
 
 .expanded.today:after {
-    z-index: 100;
+    z-index: var(--normal);
 }
 
 
@@ -248,7 +255,7 @@ opacity:1;
 .expanded.today:before {
     transform: rotateX(-180deg) skew(-2deg);
     box-shadow: 16px 24px 44px rgba(2, 0, 10, .24);
-    z-index:1000;
+       z-index: var(--above);
 }
 
 
@@ -271,76 +278,47 @@ opacity:1;
 =            Grid dates            =
 ==================================*/
 
-.grid-item:nth-child(1) {
-    grid-row: 1 / 3;
-    grid-column: 1 / 5;
+.day-1 {
+    //grid-row: 1 / 3;
+    //grid-column: 1 / 5;
     background: url(/images/day1.svg)no-repeat, var(--blue-dark);
-    background-size: 80%;
+    background-size: 50%;
+    height:270px;
+
     background-position: center;
     @media (--medium) {
-        grid-row: 1/4;
-        grid-column: 1/4;
+        //grid-row: 1/4;
+        //grid-column: 1/4;
     }
 }
 
 
-
-
-.grid-item:nth-child(2) {
-    background: url(/images/day2.svg)no-repeat, var(--rose);
-    background-size: contain;
-    background-position: center;
-
-    grid-row: 1/4;
-    grid-column: 5/9;
-    @media (--medium) {
-        grid-column: 4/7;
-        grid-row: 1/5;
-    }
-}
-
-.grid-item:nth-child(3) {
-    background: url(/images/day3.svg)no-repeat, var(--blue-muted);
-    background-size: cover;
-
-    grid-row: 3/4;
-    grid-column: 1/5;
-    background-position: 50% -1rem;
-    @media (--medium) {
-        background-position: 30% 1rem;
-        grid-row: 1 / 3;
-        grid-column: 7/9;
-    }
-}
-
-.grid-item:nth-child(4) {
-    background: url(/images/day4.svg)no-repeat, var(--purple-muted);
-    background-size: cover;
-    background-position: 43% 5rem;
-    grid-row: 4/6;
-    grid-column: 1/7;
-    @media (--medium) {
-        grid-row: 1 / 4;
-        grid-column: 9/13;
-    }
-}
-
-.photo-1:before {
+.service-1:before {
     background: url(/images/logo.svg) no-repeat;
     background-size: 50%;
     background-position: 110% 1rem;
     opacity: .1;
 }
 
-.photo-1 {
-    background: var(--purple-dates);
+.service-1 {
+    background: var(--gold-muted);
     background-size: cover;
     background-position: center;
     display: flex;
     padding: 2rem;
+      width:25%;
+      //height:316px;
     align-items: flex-start;
     justify-content: center;
     flex-direction: column;
+
+& h3{
+  font-size:3rem;
+  font-weight:100;
+  line-height:2.5rem;
+  font-family:var(--font-body);
+  margin:0;
+}
 
     & p {
         font-size: 1rem;
@@ -354,7 +332,7 @@ opacity:1;
         font-weight: 100;
         text-transform: uppercase;
         font-size: 1.25rem;
-        font-family: var(--font-thin);
+        font-family: var(--font-title);
         letter-spacing: 2px;
         color: var(--white);
     }
@@ -363,24 +341,79 @@ opacity:1;
         margin-top: 1rem;
     }
 
-    grid-row: 10/12;
-    grid-column: 1/9;
+    //grid-row: 10/12;
+    //grid-column: 1/9;
     @media (--medium) {
-        grid-row: 4/6;
-        grid-column: 1/4;
+        //grid-row: 4/6;
+        //grid-column: 1/4;
     }
 }
 
-.grid-item:nth-child(6) {
+
+.photo-1{
+  width:50%;
+  height:370px;
+  background:linear-gradient(45deg, color(var(--purple-dates) alpha(-50%)), color(var(--purple-dates) alpha(-50%))),url(../images/intro.jpg)no-repeat;
+  background-size:cover;
+  background-position:center;
+}
+
+.day-2 {
+    background: url(/images/day2.svg)no-repeat, var(--rose);
+    background-size: contain;
+    background-position: center;
+
+    height:350px;
+
+
+    //grid-row: 1/4;
+    //grid-column: 5/9;
+    @media (--medium) {
+        //grid-column: 4/7;
+        //grid-row: 1/5;
+    }
+}
+
+.day-3 {
+     background-position: 50% -1rem;
+    background: url(/images/day3.svg)no-repeat, var(--blue-muted);
+    background-size: cover;
+width:17%;
+
+
+   
+ 
+    @media (--medium) {
+        background-position: 30% 1rem;
+
+    }
+}
+
+.day-4{
+    background: url(/images/day4.svg)no-repeat, var(--purple-muted);
+    background-size: cover;
+    background-position: 43% 5rem;
+//width:440px;
+
+   width:33%;
+    @media (--medium) {
+        //grid-row: 1 / 4;
+        //grid-column: 9/13;
+    }
+}
+
+
+
+.day-5 {
     background: url(/images/day5.svg)no-repeat, var(--blue-muted);
     background-size: 50%;
     background-position: center;
-    grid-row: 4/6;
-    grid-column: 7/9;
-    @media (--medium) {
-        grid-row: 6 / 8;
+width:17%;
 
-        grid-column: 2/4;
+    @media (--medium) {
+        //grid-row: 6 / 8;
+
+        //grid-column: 2/4;
     }
 }
 
@@ -389,11 +422,11 @@ opacity:1;
     background: url(/images/day6.svg)no-repeat, var(--blue-dark);
     background-size: cover;
     background-position: center;
-    grid-row: 6/8;
-    grid-column: 1/5;
+
+height:315px;
     @media (--medium) {
-        grid-row: 5 / 9;
-        grid-column: 4/7;
+        //grid-row: 5 / 9;
+        //grid-column: 4/7;
     }
 }
 
@@ -402,11 +435,11 @@ opacity:1;
     background: url(/images/day7.svg)no-repeat, var(--purple-muted);
     background-size: cover;
     background-position: center;
-    grid-row: 6/8;
-    grid-column: 5/9;
+width:12%;
+
     @media (--medium) {
-        grid-row: 3 / 6;
-        grid-column: 7/9;
+      //  grid-row: 3 / 6;
+      //  grid-column: 7/9;
     }
 }
 
@@ -415,11 +448,11 @@ opacity:1;
     background: url(/images/day8.svg)no-repeat, var(--purple);
     background-size: cover;
     background-position: center;
-    grid-row: 8/10;
-    grid-column: 1/6;
+width:30%;
+
     @media (--medium) {
-        grid-row: 4 / 6;
-        grid-column: 9/13;
+       // grid-row: 4 / 6;
+       // grid-column: 9/13;
     }
 }
 
@@ -427,11 +460,11 @@ opacity:1;
     background: url(/images/day9.svg)no-repeat, url(/images/day9-bg.svg)no-repeat, var(--purple-muted);
     background-size: 80%, cover, cover;
     background-position: center;
-    grid-row: 8/10;
-    grid-column: 6/9;
+//width:270px;
+
     @media (--medium) {
-        grid-row: 8 / 11;
-        grid-column: 2/4;
+       // grid-row: 8 / 11;
+       // grid-column: 2/4;
     }
 }
 
@@ -440,11 +473,11 @@ opacity:1;
     background: url(/images/day10.svg)no-repeat, var(--blue-dark);
     background-size: 60%;
     background-position: center;
-    grid-row: 14/16;
-    grid-column: 1/6;
+//width:247px;
+height:335px;
     @media (--medium) {
-        grid-row: 9 / 11;
-        grid-column: 4/7;
+       // grid-row: 9 / 11;
+       // grid-column: 4/7;
     }
 }
 
@@ -453,11 +486,11 @@ opacity:1;
     background: url(/images/day11.svg)no-repeat, url(/images/day11bg.svg)no-repeat, var(--rose);
     background-size: 30%, cover;
     background-position: center;
-    grid-row: 14/16;
-    grid-column: 6/9;
+//width:310px;
+height:300px;
     @media (--medium) {
-        grid-row: 11/13;
-        grid-column: 3/7;
+     //   grid-row: 11/13;
+    //    grid-column: 3/7;
     }
 }
 
@@ -466,42 +499,51 @@ opacity:1;
 }
 
 .worship-10 {
+  //width:580px;
+  height:370px;
     background: linear-gradient(45deg, color(var(--purple-dates) alpha(-30%)), color(var(--purple-dates) alpha(-30%))), url(/images/day-1--photo.jpg)no-repeat;
     background-size: cover;
     background-position: center;
     display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-direction: row;
+    align-items: flex-start;
+    justify-content: flex-end;
+    flex-direction: column;
     padding: .25rem;
 
-    grid-row: 12/14;
-    grid-column: 1/9;
+   // grid-row: 12/14;
+   // grid-column: 1/9;
+& span{
+  font-family:var(--font-title);
+  letter-spacing:4px;
+  font-weight:100;
+  font-size:.75rem;
+
+}
 
     & h2 {
         font-weight: 100;
-        text-align: center;
-        font-family: var(--font-body);
-        color: var(--white);
 
+        font-family: var(--font-body);
+        color: var(--gold-muted);
+      margin-bottom:0;
+      margin-top:.25rem;
         font-size: 1.5rem;
 
 
         @media (--medium) {
-            max-width: 50%;
-            margin: 2rem 0 0 0;
+ max-width:60%;
+    
         }
     }
 
 
     @media (--medium) {
         padding: 2rem;
-        align-items: flex-start;
-        justify-content: flex-end;
+       
         background-size: cover, cover;
         background-position: center;
-        grid-row: 6 / 10;
-        grid-column: 7/13;
+       // grid-row: 6 / 10;
+       // grid-column: 7/13;
     }
 }
 
@@ -513,12 +555,12 @@ opacity:1;
     background: linear-gradient(45deg, color(var(--purple-dates) alpha(-60%)), color(var(--purple-dates) alpha(-60%))), url(/images/day16-photo.jpg)no-repeat;
     background-size: cover;
     background-position: center;
-    grid-row: 16/19;
-    grid-column: 6/9;
+   // grid-row: 16/19;
+  //  grid-column: 6/9;
     @media (--medium) {
 
-        grid-row: 11/14;
-        grid-column: 1/3;
+       // grid-row: 11/14;
+       // grid-column: 1/3;
     }
 }
 
@@ -527,39 +569,39 @@ opacity:1;
     background: url(/images/day12.svg)no-repeat, var(--blue-muted);
     background-size: 70%;
     background-position: center;
-    grid-row: 16/19;
-    grid-column: 1/6;
+//width:313px;
+height:290px;
     @media (--medium) {
-        grid-row: 10/13;
-        grid-column: 7/10;
+     //   grid-row: 10/13;
+     //   grid-column: 7/10;
     }
 }
 
 .day-13 {
-    grid-row: 19/21;
-    grid-column: 1/6;
+////width:250px;
+height:285px;
     @media (--medium) {
-        grid-row: 10/14;
-        grid-column: 10/13;
+       // grid-row: 10/14;
+      //  grid-column: 10/13;
     }
 }
 
 .day-14 {
-    grid-row: 19/22;
-    grid-column: 6/9;
+//width:230px;
+height:315px;
     @media (--medium) {
-        grid-row: 14/16;
-        grid-column: 1/3;
+     //   grid-row: 14/16;
+     //   grid-column: 1/3;
     }
 }
 
 
 .day-15 {
-    grid-row: 21/24;
-    grid-column: 1/6;
+//width:290px;
+height:290px;
     @media (--medium) {
-        grid-row: 13/16;
-        grid-column: 3/7;
+      //  grid-row: 13/16;
+      //  grid-column: 3/7;
     }
 }
 
@@ -572,21 +614,21 @@ opacity:1;
     background: linear-gradient(45deg, color(var(--purple-dates) alpha(-70%)), color(var(--purple-dates) alpha(-70%))), url(/images/vertical_pray.jpg)no-repeat;
     background-size: cover;
     background-position: center;
-    grid-row: 24/27;
-    grid-column: 1/9;
+//width:237px;
+
     @media (--medium) {
-        grid-row: 13/16;
-        grid-column: 7/10;
+      //  grid-row: 13/16;
+       // grid-column: 7/10;
     }
 }
 
 
 .day-16 {
-    grid-row: 22/24;
-    grid-column: 6/9;
+//width:570px;
+height:335px;
     @media (--medium) {
-        grid-row: 14/19;
-        grid-column: 10/13;
+     //   grid-row: 14/19;
+     //   grid-column: 10/13;
     }
 }
 
@@ -598,61 +640,65 @@ opacity:1;
     background: linear-gradient(45deg, color(var(--purple-dates) alpha(-50%)), color(var(--purple-dates) alpha(-50%))), url(/images/day17-photo.jpg)no-repeat;
     background-size: cover;
     background-position: center;
-    grid-row: 32/34;
-    grid-column: 1/9;
+//width:777px;
+height:335px;
     @media (--medium) {
         background-size: cover, 120%;
         background-position: center, 0 -2rem;
-        grid-row: 16/19;
-        grid-column: 1/6;
+      //  grid-row: 16/19;
+      //  grid-column: 1/6;
     }
 }
 
 
 .day-17 {
-    grid-row: 27/30;
-    grid-column: 1/9;
+ //width:250px;
+ height:290px;
     @media (--medium) {
-        grid-row: 16/19;
-        grid-column: 6/10;
+     //   grid-row: 16/19;
+     //   grid-column: 6/10;
     }
 }
 
+.wreath-17{
+  //width:250px;
+  height:290px;
+}
 
 .day-18 {
-    grid-row: 30/32;
-    grid-column: 1/6;
+//width:370px;
+height:370px;
     @media (--medium) {
-        grid-row: 19/23;
-        grid-column: 1/5;
+     //   grid-row: 19/23;
+     //   grid-column: 1/5;
     }
 }
 
 .day-19 {
-    grid-row: 30/32;
-    grid-column: 6/9;
+height:370px;
+//width:370px;
     @media (--medium) {
-        grid-row: 19/23;
-        grid-column: 5/9;
+      //  grid-row: 19/23;
+     //   grid-column: 5/9;
     }
 }
 
 .day-20 {
-    grid-row: 34/36;
-    grid-column: 1/6;
+height:370px;
+//width:370px;
     @media (--medium) {
-        grid-row: 19/23;
-        grid-column: 9/13;
+    //    grid-row: 19/23;
+     //   grid-column: 9/13;
     }
 }
 
 
 .day-21 {
-    grid-row: 34/37;
-    grid-column: 6/9;
+ //width:372px;
+ height:590px;
     @media (--medium) {
-        grid-row: 23/28;
-        grid-column: 1/5;
+    //    grid-row: 23/28;
+    //    grid-column: 1/5;
     }
 }
 
@@ -664,34 +710,37 @@ opacity:1;
     background: linear-gradient(45deg, color(var(--purple-dates) alpha(-60%)), color(var(--purple-dates) alpha(-60%))), url(/images/horizontalchoir.jpg)no-repeat;
     background-size: cover;
     background-position: center;
-    grid-row: 37/39;
-    grid-column: 6/9;
+//width:777px;
+height:777px;
     @media (--medium) {
-        grid-row: 23/29;
-        grid-column: 5/13;
+      //  grid-row: 23/29;
+     //   grid-column: 5/13;
     }
 }
 
 
-
+.cta-21{
+  //width:370px;
+  height:475px;
+}
 
 .day-22 {
-    grid-row: 36/39;
-    grid-column: 1/6;
+//width:380px;
+height:600px;
     @media (--medium) {
-        grid-row: 28/32;
-        grid-column: 1/5;
+  //      grid-row: 28/32;
+   //     grid-column: 1/5;
     }
 }
 
 
 
 .day-23 {
-    grid-row: 39/42;
-    grid-column: 1/9;
+ //width:765px;
+ height:440px;
     @media (--medium) {
-        grid-row: 29/32;
-        grid-column: 5/13;
+   //     grid-row: 29/32;
+   //     grid-column: 5/13;
     }
 }
 
@@ -703,23 +752,25 @@ opacity:1;
     background: linear-gradient(45deg, color(var(--purple-dates) alpha(-60%)), color(var(--purple-dates) alpha(-60%))), url(/images/horizontalfamily.jpg)no-repeat;
     background-size: cover;
     background-position: center;
-    grid-row: 42/45;
-    grid-column: 1/9;
+  //  grid-row: 42/45;
+  //  grid-column: 1/9;
     @media (--medium) {
-        grid-row: 32/37;
-        grid-column: 1/13;
+   //     grid-row: 32/37;
+  //      grid-column: 1/13;
     }
 }
 
 
 .day-24 {
-    grid-row: 45/48;
-    grid-column: 1/9;
+//width:777px;
+height:777px;
     @media (--medium) {
-        grid-row: 37/41;
-        grid-column: 1/6;
+   //     grid-row: 37/41;
+  //      grid-column: 1/6;
     }
 }
+
+
 
 
 
