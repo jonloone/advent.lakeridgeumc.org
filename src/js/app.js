@@ -1,7 +1,7 @@
 // JS Goes here - ES6 supported
 import { Expo, TweenMax } from "gsap";
 import 'smoothstate';
-import AOS from 'AOS';
+import AOS from 'aos';
 
  AOS.init();
 
