@@ -81,13 +81,13 @@ var _gsap = __webpack_require__(2);
 
 __webpack_require__(4);
 
-var _AOS = __webpack_require__(5);
+var _aos = __webpack_require__(5);
 
-var _AOS2 = _interopRequireDefault(_AOS);
+var _aos2 = _interopRequireDefault(_aos);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-_AOS2.default.init();
+_aos2.default.init();
 
 // auto open date
 

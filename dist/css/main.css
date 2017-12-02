@@ -1754,8 +1754,7 @@ body[data-aos-easing=ease-in-out-quart] [data-aos] {
       -ms-flex-pack:center;
           justify-content:center;
   top:-8vw;
-  overflow:hidden;
-      z-index:100
+  overflow:hidden
 
 }
 
@@ -1772,7 +1771,7 @@ body[data-aos-easing=ease-in-out-quart] [data-aos] {
     text-align:center;
     position:relative;
   
-    z-index:100;
+
     font-weight:100;
 }
 
@@ -1874,13 +1873,21 @@ body[data-aos-easing=ease-in-out-quart] [data-aos] {
 	-webkit-box-pack:center;
 	    -ms-flex-pack:center;
 	        justify-content:center;
-	padding:32px;
-	padding:2rem;
+	
+	padding:8px;
+	
+	padding:.5rem;
 overflow-y: scroll;
-   top: 0; right: 0; bottom: 0; left: 0; 
-
+   top: 0; right: 0; bottom: 0; left: 0
 
 }
+
+@media (min-width: 700px) {
+
+  .day__content{
+padding:2rem;
+  }
+	 }
 
 .day__content.box-close{
 
@@ -1892,21 +1899,37 @@ overflow-y: scroll;
 /* Page content */
 
 .quote{
-	width:50%;
+	
+
 	display:-webkit-box;
+	
+
 	display:-ms-flexbox;
+	
+
 	display:flex;
 	-webkit-box-align:center;
 	    -ms-flex-align:center;
 	        align-items:center;
+
 	-webkit-box-pack:center;
+
 	    -ms-flex-pack:center;
+
 	        justify-content:center;
 	-webkit-box-orient:vertical;
 	-webkit-box-direction:normal;
 	    -ms-flex-direction:column;
 	        flex-direction:column;
+width:100%
 }
+
+@media (min-width: 700px) {
+
+  .quote{
+	width:50%;
+  }
+	 }
 
 .quote p {
 	font-family:"Klang W01";
@@ -1917,18 +1940,24 @@ overflow-y: scroll;
 }
 
 p.quote__intro {
+	padding-top:20vh;
 	font-family: "Klang W01";
-	font-size:2vw;
-	color:#F9C68F;
+	font-size:24px;
+	font-size:1.5rem;
+		text-align:left;
+		margin-bottom:10vh;
+
+
+	color:#F9C68F
 }
 
-@media screen and (max-width: 50em) {
-	.quote__intro {
-		font-size: 5vw;
-		text-align: center;
-		padding: 0.5em;
-	}
-}
+@media (min-width: 700px) {
+
+  p.quote__intro{
+		 	text-align:center;
+font-size:3vw;
+  }
+		 }
 
 .day-2 .day__content{
 	background:#E55B7D;
@@ -1971,7 +2000,7 @@ p.quote__intro {
     -webkit-transform: translateY(-20vh);
             transform: translateY(-20vh);
     z-index: 1;
-    bottom: 10vh;
+    bottom: 8vh;
     transition: all .5s;
     width: 80%;
     opacity: 1

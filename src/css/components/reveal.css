@@ -19,10 +19,13 @@
 	display:flex;
 	align-items:center;
 	justify-content:center;
-	padding:2rem;
+	
+	padding:.5rem;
 overflow-y: scroll;
    top: 0; right: 0; bottom: 0; left: 0; 
-
+	 @media (--medium) {
+padding:2rem;
+	 }
 
 }
 
@@ -39,11 +42,17 @@ overflow-y: scroll;
 
 
 .quote{
-	width:50%;
+	
+
 	display:flex;
 	align-items:center;
+
 	justify-content:center;
 	flex-direction:column;
+width:100%;
+	 @media (--medium) {
+	width:50%;
+	 }
 }
 
 
@@ -55,21 +64,23 @@ overflow-y: scroll;
 }
 
 p.quote__intro {
+	padding-top:20vh;
 	font-family: var(--font-body);
-	font-size:2vw;
+	font-size:1.5rem;
+		text-align:left;
+		margin-bottom:10vh;
+
+
 	color:var(--gold-muted);
+		 @media (--medium) {
+		 	text-align:center;
+font-size:3vw;
+		 }
 }
 
 
 
 
-@media screen and (max-width: 50em) {
-	.quote__intro {
-		font-size: 5vw;
-		text-align: center;
-		padding: 0.5em;
-	}
-}
 
 
 
