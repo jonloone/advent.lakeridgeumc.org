@@ -2000,10 +2000,13 @@ font-size:3vw;
     -webkit-transform: translateY(-20vh);
             transform: translateY(-20vh);
     z-index: 1;
-    bottom: 8vh;
+    bottom: 7vh;
     transition: all .5s;
     width: 80%;
-    opacity: 1
+    opacity: 1;
+margin:auto;
+left:0;
+right:0
 }
 
 @media (min-width: 700px) {
@@ -2017,6 +2020,7 @@ width:30%;
     position:absolute;
     top:256px;
     top:16rem;
+    width:100%;
     z-index:5;
     text-align:center;
     display:-webkit-box;
