@@ -10,6 +10,7 @@ import watch from "gulp-watch";
 import webpack from "webpack";
 import webpackConfig from "./webpack.conf";
 
+
 const browserSync = BrowserSync.create();
 
 // Hugo arguments

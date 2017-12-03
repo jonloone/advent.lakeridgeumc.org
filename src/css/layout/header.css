@@ -16,11 +16,8 @@
     z-index: 1;
     bottom: 5vh;
     transition: all .5s;
-    width: 60%;
+    width: 50%;
     opacity: 1;
-    @media (--medium) {
-        width: 100%;
-    }
 }
 
 .star__logo {
@@ -76,18 +73,13 @@
 
         bottom: -35vh;
     }
-
-    @media screen and (min-aspect-ratio:1/1) and (max-aspect-ratio:1/1) {}
-
-
-    .ground--back,
-    .ground--middle {
-        fill: var(--black);
-        transition: all .4s ease;
-    }
 }
 
-
+.ground--back,
+.ground--middle {
+    fill: var(--black);
+    transition: all .4s ease;
+}
 
 
 .banner__ground {
@@ -100,22 +92,21 @@
     background-size: 102vw;
     background-position: -2vw 2vw;
     width: 100vw;
-  height: 25vw;
+    height: 25vw;
     position: absolute;
     bottom: 0;
     opacity: 1;
     left: 0;
-  
+
     @media (--medium) {
-     height: 20vw;
+        height: 20vw;
         flex-direction: column;
         justify-content: center;
     }
 
     @media (--large) {
-           height: 30vh;
+        height: 30vh;
     }
-
 }
 
 
