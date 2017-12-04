@@ -253,7 +253,7 @@ div[class^="day-"]{
     background-position: center;
          @media (--small-only) {
        grid-column-end: span 1;
-          grid-row-end: span 3;
+          grid-row-end: span 2;
         }
     @media (--medium) {
         background-size: 50%;
@@ -273,7 +273,7 @@ div[class^="day-"]{
     // grid-row: 1/4;
     // grid-column: 5/9;
           @media (--small-only) {
-          grid-column-end: span 2;
+          grid-column-end: span 3;
 grid-row-end: span 2;
 }
     @media (--medium) {
@@ -331,7 +331,7 @@ grid-row-end: span 2;
   background-size:cover;
   background-position:center;
      @media (--small-only) {
-  grid-column-end: span 2;
+  grid-column-end: span 1;
   grid-row-end: span 2;
 }
 
@@ -380,7 +380,7 @@ grid-row-end: span 2;
     }
 
    @media (--small-only) {
-   grid-column-end: span 3;
+   grid-column-end: span 4;
       grid-row-end: span 3;
 }
 
