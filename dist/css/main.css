@@ -2248,25 +2248,88 @@ main{
     -ms-grid-columns: (minmax(120px, 1fr))[auto-fill];
         grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
     grid-gap: 10px;
-    grid-auto-rows: minmax(120px, auto);
-    grid-auto-flow: dense;
+    grid-auto-rows: minmax(100px,100px);
+    //grid-auto-flow:  dense;
     padding: 10px;
 
+
 }
 
-.span-2 {
+@media (min-width: 490px) {
+
+
+  
+.x-1{
+  -ms-grid-column-span: 1;
+      grid-column-end: span 1;
+}
+
+.x-2 {
     -ms-grid-column-span: 2;
         grid-column-end: span 2;
-    -ms-grid-row-span: 2;
-        grid-row-end: span 2;
+
 }
 
-.span-3 {
+.x-4{
+  -ms-grid-column-span: 4;
+      grid-column-end: span 4;
+
+}
+
+.x-3 {
     -ms-grid-column-span: 3;
         grid-column-end: span 3;
+ 
+}
+
+.x-4{
+   -ms-grid-column-span: 4;
+       grid-column-end: span 4;
+}
+
+.x-5{
+   -ms-grid-column-span: 5;
+       grid-column-end: span 5;
+}
+
+
+.y-1 {
+  -ms-grid-row-span:1;
+      grid-row-end:span 1;
+}
+
+.y-2{
+   
+        -ms-grid-row-span: 2;
+   
+            grid-row-end: span 2;
+
+}
+
+.y-3{
+
+    -ms-grid-row-span: 3;
+
+        grid-row-end: span 3;
+}
+
+
+.y-4{
+
     -ms-grid-row-span: 4;
+
         grid-row-end: span 4;
 }
+
+
+.y-5{
+
+    -ms-grid-row-span: 5;
+
+        grid-row-end: span 5;
+}
+
+  }
 
 /*=======================================
 =            Grid date style            =
@@ -2274,7 +2337,8 @@ main{
 
 .grid-item , .feature ,.grid{
 
-
+height:auto;
+width:auto;
     border-radius: 3px;
     overflow: hidden;
     background: #4838A5;
@@ -2419,6 +2483,16 @@ div[class^="day-"]{
     background-position: center
 }
 
+@media (max-width: 490px) {
+
+  .day-1{
+       -ms-grid-column-span: 1;
+           grid-column-end: span 1;
+          -ms-grid-row-span: 3;
+              grid-row-end: span 3;
+  }
+        }
+
 @media (min-width: 700px) {
 
   .day-1{
@@ -2435,6 +2509,16 @@ div[class^="day-"]{
 
     // grid-row: 1/4;
     // grid-column: 5/9
+}
+
+@media (max-width: 490px) {
+
+  .day-2{
+          -ms-grid-column-span: 2;
+              grid-column-end: span 2;
+-ms-grid-row-span: 2;
+    grid-row-end: span 2;
+  }
 }
 
 @media (min-width: 700px) {
@@ -2454,6 +2538,16 @@ div[class^="day-"]{
     // grid-column: 1/5
 }
 
+@media (max-width: 490px) {
+
+  .day-3{
+              -ms-grid-row-span: 2;
+                  grid-row-end: span 2;
+                 -ms-grid-column-span: 4;
+                     grid-column-end: span 4;
+  }
+                 }
+
 @media (min-width: 700px) {
 
   .day-3{
@@ -2471,6 +2565,16 @@ div[class^="day-"]{
     // grid-column: 1/7
 }
 
+@media (max-width: 490px) {
+
+  .day-4{
+            -ms-grid-column-span: 4;
+                grid-column-end: span 4;
+          -ms-grid-row-span: 2;
+              grid-row-end: span 2;
+  }
+        }
+
 @media (min-width: 700px) {
 
   .day-4{
@@ -2487,13 +2591,30 @@ div[class^="day-"]{
     opacity: .1;
 }
 
+.photo-1{
+
+
+  background:linear-gradient(45deg, rgba(12, 12, 65, 0.5), rgba(12, 12, 65, 0.5)),url(../images/intro.jpg)no-repeat;
+  background-size:cover;
+  background-position:center
+
+}
+
+@media (max-width: 490px) {
+
+  .photo-1{
+  -ms-grid-column-span: 2;
+      grid-column-end: span 2;
+  -ms-grid-row-span: 2;
+      grid-row-end: span 2;
+  }
+}
+
 .service-1 {
     background: #F9C68F;
     background-size: cover;
     background-position: center;
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
+
     padding: 32px;
     padding: 2rem;
 
@@ -2508,6 +2629,7 @@ div[class^="day-"]{
     -webkit-box-direction: normal;
         -ms-flex-direction: column;
             flex-direction: column;
+
 
       // grid-row: 10/12;
     // grid-column: 1/9
@@ -2547,10 +2669,14 @@ div[class^="day-"]{
         margin-top: 1rem;
 }
 
-@media (max-width: 700px) {
+@media (max-width: 490px) {
 
-  .service-1{}
-
+  .service-1{
+   -ms-grid-column-span: 3;
+       grid-column-end: span 3;
+      -ms-grid-row-span: 3;
+          grid-row-end: span 3;
+  }
 }
 
 @media (min-width: 700px) {
@@ -2569,6 +2695,16 @@ div[class^="day-"]{
     // grid-column: 7/9
 }
 
+@media (max-width: 490px) {
+
+  .day-5{
+   -ms-grid-column-span: 1;
+       grid-column-end: span 1;
+      -ms-grid-row-span: 2;
+          grid-row-end: span 2;
+  }
+   }
+
 @media (min-width: 700px) {
 
   .day-5{
@@ -2585,6 +2721,16 @@ div[class^="day-"]{
         // grid-row: 6/8;
     // grid-column: 1/5
 }
+
+@media (max-width: 490px) {
+
+  .day-6{
+   -ms-grid-column-span: 3;
+       grid-column-end: span 3;
+      -ms-grid-row-span: 3;
+          grid-row-end: span 3;
+  }
+   }
 
 @media (min-width: 700px) {
 
@@ -2828,7 +2974,7 @@ div[class^="day-"]{
 }
 
 .photo-16 {
-    background: linear-gradient(45deg, rgba(12, 12, 65, 0.30000000000000004), rgba(12, 12, 65, 0.30000000000000004)), url(/images/day16-photob.jpg)no-repeat;
+    background: linear-gradient(45deg, rgba(12, 12, 65, 0.30000000000000004), rgba(12, 12, 65, 0.30000000000000004)), url(/images/vertical_pray.jpg)no-repeat;
     background-size: cover;
     background-position: center;
     // grid-row: 24/27;
@@ -2871,8 +3017,8 @@ div[class^="day-"]{
 @media (min-width: 700px) {
 
   .worship-17{
-        background-size: cover, 120%;
-        background-position: center, 0 -2rem;
+        background-size: cover, cover;
+        background-position: center;
         // grid-row: 16/19;
         // grid-column: 1/6;
   }
