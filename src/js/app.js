@@ -30,40 +30,21 @@ target.each(function(){
 
 // handle clicks on days
 
-$('.grid-item').click(function(){
-  if ($(this).hasClass('future')){
-    $('#modal').addClass('active');
-    $('#modal .wrapper .content .box').html("<h2>Naughty, naughty.</h2> <p>You can't look early! Check back on that day to see what I've left for you.</p>");
-  }
-
-if ($(this).hasClass('today')){
-    var content = $(this).children('.day__content').html();
-    $('#modal').addClass('active');
-    $('#modal .wrapper .content .box').html('');
-    $('#modal .wrapper .content .box').html(content);
-  }
-
-
-  if ($(this).hasClass('past')){
-    var content = $(this).children('.day__content').html();
-    $('#modal').addClass('active');
-    $('#modal .wrapper .content .box').html('');
-    $('#modal .wrapper .content .box').html(content);
-  }
-})
 
 // close modal
 
-$('.close').click(function(){
-  var ultimateParent = $(this).parent().parent().parent();
-  ultimateParent.addClass('moveOut');
-  setTimeout(function(){
-    ultimateParent.removeClass('moveOut').removeClass('active');
-  },250);
+
+
+$('.today .day__content').click(function(){
+var inst = $('[data-remodal-id=modal]').remodal();
+inst.close();
 })
 
 
-
+$('.today').click(function(){
+var inst = $('[data-remodal-id=modal]').remodal();
+inst.open();
+})
 // Delay scrolling
 
 $('body').addClass('stop-scrolling')
