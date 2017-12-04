@@ -18,13 +18,13 @@
 
 
  a{
- 	color:var(--gold);
+ 	color:var(--rose);
  	font-family:var(--font-title);
- 	text-transform:uppercase;
+ 	//text-transform:uppercase;
 	transition:all .4s ease;
 
  }
 
  a:hover{
- 		color:var(--rose);
+ 		color:var(--gold);
  	}
