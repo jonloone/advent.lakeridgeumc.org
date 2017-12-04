@@ -7,27 +7,62 @@ import AOS from 'aos';
 
 
 
+
+
 // auto open date
 
-$(function() {
-    var date = new Date(),
-        currentDate = date.getFullYear() + "-" + (date.getMonth() + 1) + "-" + date.getDate();
-    currentDate = Date.parse(currentDate);
-    $(".grid-item").each(function() {
-        var specifiedDate = $(this).data('date');
-        specifiedDate = Date.parse(specifiedDate);
-        if (specifiedDate == currentDate) {
-            $(this).addClass("today").append('<div id="date-featured"></div>');
+var d = new Date();
+var todaysDate = d.getDate();
+var target = $('.calendar .date');
 
-        } else if (currentDate > specifiedDate) {
-            $(this).addClass('past');
-        } else {
-            $(this).addClass('future');
-            $(this).addClass('peek');
-            $(this).append('<div class="no-peek"><h2>No Peeking!</h2></div>');
-        }
-    });
+target.each(function(){
+  var day = $(this).html();
+  if (todaysDate == day) {
+    $(this).parent().addClass('today').append('<div id="date-featured"></div>');
+  }
+  if (todaysDate < day){
+    $(this).parent().addClass('future');
+  }
+  if (todaysDate > day){
+    $(this).parent().addClass('past')
+  }
 });
+
+// handle clicks on days
+
+$('.grid-item').click(function(){
+  if ($(this).hasClass('future')){
+    $('#modal').addClass('active');
+    $('#modal .wrapper .content .box').html("<h2>Naughty, naughty.</h2> <p>You can't look early! Check back on that day to see what I've left for you.</p>");
+  }
+
+if ($(this).hasClass('today')){
+    var content = $(this).children('.day__content').html();
+    $('#modal').addClass('active');
+    $('#modal .wrapper .content .box').html('');
+    $('#modal .wrapper .content .box').html(content);
+  }
+
+
+  if ($(this).hasClass('past')){
+    var content = $(this).children('.day__content').html();
+    $('#modal').addClass('active');
+    $('#modal .wrapper .content .box').html('');
+    $('#modal .wrapper .content .box').html(content);
+  }
+})
+
+// close modal
+
+$('.close').click(function(){
+  var ultimateParent = $(this).parent().parent().parent();
+  ultimateParent.addClass('moveOut');
+  setTimeout(function(){
+    ultimateParent.removeClass('moveOut').removeClass('active');
+  },250);
+})
+
+
 
 // Delay scrolling
 
@@ -45,51 +80,7 @@ setTimeout(
 
 
 
-// open box
 
-$(function() {
-    $('.today').click(function() {
-        $(this).addClass('expanded');
-  $(this).find('.day__content').toggleClass('box-close');
-      $('.home').toggleClass('no-scroll');
-    });
-});
-
-
-// open past
-
-$(function() {
-    $('.past').click(function() {
-        $(this).addClass('expanded');
-  $(this).find('.day__content').toggleClass('box-close');
-    $('.home').toggleClass('no-scroll');
-    });
-});
-
-
-//
-
-
-
-
-$(window).resize(function(){
-    if ($(window).width() < 700){  
-    // no peek!
-
-$(function() {
-    $('.peek').click(function() {
-        $(this).addClass('peek-open');
-
-setTimeout(
-    function() {
-        $('.peek').removeClass('peek-open') }, 
-        1000);
-
-    });
-});
-
-    }   
-});
 
 
 // header open
@@ -109,34 +100,6 @@ TweenMax.to(".banner__wordmark", .5, { transform: "translateY(0vh)", opacity: "0
 TweenMax.to(".stars", .75, { opacity: "1", delay: 1.5, ease: Expo.easeIn });
 
 
-//masonry
-
-// - - - - - - - - - 
-
-
-//$( function() {
-
-  //  $('.calendar').masonry({
-    //    columnWidth: '.grid-sizer',
-      //  percentPosition:true,
-        //itemSelector: '.grid',
-
-   //   gutter: '.gutter-sizer',
-
-    //});
-
-//});
-
-
-$('.calendar').isotope({
-  // options
-  itemSelector: '.grid',
-  layoutMode: 'fitRows',
-  percentPosition: true,
-fitRows: {
-  gutter: '.gutter-sizer'
-},
-});
 
 
 
