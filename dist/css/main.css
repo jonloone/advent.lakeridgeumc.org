@@ -2557,6 +2557,96 @@ opacity:1;
       grid-row-end: span 2;
   }
 }
+.events-4{
+padding:16px;
+padding:1rem;
+display:-webkit-box;
+display:-ms-flexbox;
+display:flex;
+-webkit-box-align:start;
+    -ms-flex-align:start;
+        align-items:flex-start;
+-webkit-box-pack:start;
+    -ms-flex-pack:start;
+        justify-content:flex-start;
+-webkit-box-orient:vertical;
+-webkit-box-direction:normal;
+    -ms-flex-direction:column;
+        flex-direction:column
+
+}
+@media (max-width: 490px) {
+  .events-4{
+  -ms-grid-column-span: 4;
+      grid-column-end: span 4;
+  -ms-grid-row-span: 6;
+      grid-row-end: span 6;
+  }
+}
+.events-4 h2{
+  font-size:40px;
+  font-size:2.5rem;
+  font-weight:100;
+  line-height:40px;
+  line-height:2.5rem;
+  font-family:"Klang W01";
+  margin:0;
+  transition:all .4s ease;
+}
+.events-4 p{
+        font-size: 16px;
+        font-size: 1rem;
+        font-family: "Klang W01";
+        margin: 0;
+      margin-bottom:16px;
+      margin-bottom:1rem;
+        color: #FFFEFC;
+}
+@media (min-width: 700px) {
+  .events-4 p{
+            max-width:70%;
+  }
+          }
+.events-4 h3{
+        margin: 0;
+        font-weight: 100;
+        text-transform: uppercase;
+        font-size: 12px;
+        font-size: .75rem;
+        font-family: 'TrendSansOne';
+        letter-spacing: 3px;
+        color: #FFB860;
+}
+.events-4 h4{
+        margin: 0;
+        margin-top:4px;
+        margin-top:.25rem;
+        font-weight: 100;
+        font-size: 20px;
+        font-size: 1.25rem;
+        font-family: "Klang W01";
+        color: #E55B7D;
+        margin-bottom:8px;
+        margin-bottom:.5rem;
+}
+@media (min-width: 700px) {
+  .events-4 h4{
+            max-width:70%;
+  }
+          }
+.events-4 li{
+       margin-top:32px;
+       margin-top:2rem;
+}
+.events-4 ul{
+      -webkit-padding-start: 0px;
+  list-style:none;
+  margin:0;
+}
+.events-4 p+p{
+  margin-top:16px;
+  margin-top:1rem;
+}
 .service-1 {
     background: #F9C68F;
     background-size: cover;
@@ -2818,18 +2908,20 @@ transition:all .4s ease;
 }
 .worship-10 h2{
         font-weight: 100;
-        text-align: center;
+        margin-top:8px;
+        margin-top:.5rem;
         font-family: "Klang W01";
         color: #FFFEFC;
-
+        margin-bottom:0px;
+        margin-bottom:0rem;
         font-size: 24px;
         font-size: 1.5rem;
 }
 @media (min-width: 700px) {
   .worship-10 h2{
             max-width: 50%;
-            margin: 2rem 0 0 0;
   }
+          
         }
 @media (max-width: 490px) {
   .worship-10{
