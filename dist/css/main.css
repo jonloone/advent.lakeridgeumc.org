@@ -3361,14 +3361,23 @@ transition:all .4s ease;
 
 .grid,.grid-item,.feature{
 	width:100%;
-	min-height:30vh;
+	min-height:40vh;
+	margin-bottom:2rem;
+}
+
+
+#date-featured{
+	display:none;
 }
 
 
 
-
-
-
+.quote{
+	height:100%;
+	min-height:100vh;
+	margin:auto;
+	width:100%;
+}
 
 
 
