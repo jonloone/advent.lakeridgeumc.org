@@ -3377,6 +3377,7 @@ transition:all .4s ease;
 	min-height:100vh;
 	margin:auto;
 	width:100%;
+	display:block;
 }
 
 
