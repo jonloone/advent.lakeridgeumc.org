@@ -2007,10 +2007,15 @@ main {
     padding: 32px;
     padding: 2rem;
 background-size: cover!important;
-    background-position: left!important;
+    background-position: center!important;
     background-repeat: no-repeat!important;
 	position:relative
 }
+@media (min-width: 700px) {
+  .main-day{
+    background-position: left!important;
+  }
+	  }
 .main-day h1{
         font-family: 'TrendSansOne';
         color: #FFFEFC;

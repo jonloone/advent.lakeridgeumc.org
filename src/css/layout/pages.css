@@ -18,9 +18,13 @@ main {
     min-height: 100vh;
     padding: 2rem;
 background-size: cover!important;
-    background-position: left!important;
+    background-position: center!important;
     background-repeat: no-repeat!important;
 	position:relative;
+
+	  @media (--medium) {
+    background-position: left!important;
+	  }
     
 
 
