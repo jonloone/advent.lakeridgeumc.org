@@ -1,0 +1,42 @@
+.social{
+	display:flex;
+	align-items:center;
+	justify-content:flex-start;
+
+	& a{
+		margin-right:2rem;
+	}
+}
+
+.fbicon,.twitter{
+	width:30px;
+	height:30px;
+
+	& path{
+		fill:var(--white);
+		transition:all .4s ease;
+	}
+
+	&:hover path{
+
+	fill:var(--gold);
+}
+}
+
+
+.social__logo{
+	width:30px;
+	height:40px;
+
+	
+	& path{
+		fill:var(--white);
+		transition:all .4s ease;
+	}
+
+	&:hover path{
+
+	fill:var(--gold);
+}
+
+}

@@ -1,6 +1,29 @@
 {{ partial "head" . }}
-<main class="main-day">
-	<a href="/#calendar"><h2>Go Back</h2></a>
+<main class="main-day {{ .Page.Title }}" style="background:linear-gradient(45deg, rgba({{ index .Params "bg_color" }}), rgba({{ index .Params "bg_color" }})),url('{{ index .Params "featured_image" }}'), rgba({{ index .Params "bg_color" }});"  >
+	<div class="main-topbar">
+<h1>Lakeridge United Methodist Church Advent Series</h1> 	<a href="/#calendar">
+<svg class="closepage"  viewBox="0 0 40 40" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+
+    <g id="content" stroke="none" stroke-width="0" fill="none" fill-rule="evenodd">
+        <g id="Closed-Copy-2" transform="translate(-1376.000000, -33.000000)" fill="#EBEBEB">
+            <g id="Group" transform="translate(1376.000000, 33.000000)">
+                <path d="M26.5104076,20.5 L38.7233856,8.287022 C40.3831139,6.62729376 40.3831139,3.9363426 38.7233856,2.27661436 C37.0636574,0.616886122 34.3727062,0.616886122 32.712978,2.27661436 L20.5,14.4895924 L8.00520382,1.99479618 C6.34547558,0.33506794 3.65452442,0.33506794 1.99479618,1.99479618 C0.33506794,3.65452442 0.33506794,6.34547558 1.99479618,8.00520382 L14.4895924,20.5 L2.3602309,32.6293615 C0.700502663,34.2890897 0.700502663,36.9800409 2.3602309,38.6397691 C4.01995914,40.2994973 6.7109103,40.2994973 8.37063854,38.6397691 L20.5,26.5104076 L31.9947962,38.0052038 C33.6545244,39.6649321 36.3454756,39.6649321 38.0052038,38.0052038 C39.6649321,36.3454756 39.6649321,33.6545244 38.0052038,31.9947962 L26.5104076,20.5 Z" id="Combined-Shape"></path>
+            </g>
+        </g>
+    </g>
+</svg></a>
+</div>
 {{ .Content }}
+
+<div class="social">
+<a href="https://www.facebook.com/LakeRidgeUMC.Lubbock/" target="_blank"><svg class="fbicon" aria-labelledby="simpleicons-facebook-icon" role="img" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><title id="simpleicons-facebook-icon">Facebook icon</title><path d="M22.676 0H1.324C.593 0 0 .593 0 1.324v21.352C0 23.408.593 24 1.324 24h11.494v-9.294H9.689v-3.621h3.129V8.41c0-3.099 1.894-4.785 4.659-4.785 1.325 0 2.464.097 2.796.141v3.24h-1.921c-1.5 0-1.792.721-1.792 1.771v2.311h3.584l-.465 3.63H16.56V24h6.115c.733 0 1.325-.592 1.325-1.324V1.324C24 .593 23.408 0 22.676 0"></path></svg></a>
+
+<a href="https://twitter.com/lakeridgeumc" target="_blank">
+<svg class="twitter" aria-labelledby="simpleicons-twitter-icon" role="img" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><title id="simpleicons-twitter-icon">Twitter icon</title><path d="M23.954 4.569c-.885.389-1.83.654-2.825.775 1.014-.611 1.794-1.574 2.163-2.723-.951.555-2.005.959-3.127 1.184-.896-.959-2.173-1.559-3.591-1.559-2.717 0-4.92 2.203-4.92 4.917 0 .39.045.765.127 1.124C7.691 8.094 4.066 6.13 1.64 3.161c-.427.722-.666 1.561-.666 2.475 0 1.71.87 3.213 2.188 4.096-.807-.026-1.566-.248-2.228-.616v.061c0 2.385 1.693 4.374 3.946 4.827-.413.111-.849.171-1.296.171-.314 0-.615-.03-.916-.086.631 1.953 2.445 3.377 4.604 3.417-1.68 1.319-3.809 2.105-6.102 2.105-.39 0-.779-.023-1.17-.067 2.189 1.394 4.768 2.209 7.557 2.209 9.054 0 13.999-7.496 13.999-13.986 0-.209 0-.42-.015-.63.961-.689 1.8-1.56 2.46-2.548l-.047-.02z"></path></svg></a>
+<a href="http://www.lakeridgeumc.org" target="_blank">
+<svg class="social__logo" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 160 222"><defs><mask id="mask" x="14" y="0" width="58" height="101" maskUnits="userSpaceOnUse"><g id="mask-2"><polygon id="path-1" class="cls-1" points="14 0 72 0 72 101 14 101 14 0"/></g></mask><mask id="mask-2-2" x="86" y="114" width="58" height="108" maskUnits="userSpaceOnUse"><g id="mask-4"><polygon id="path-3" class="cls-1" points="144 222 86 222 86 114 144 114 144 222"/></g></mask></defs><title>logo</title><g id="Layer_2" data-name="Layer 2"><g id="Layer_1-2" data-name="Layer 1"><g id="NorthStar"><g id="Closed"><g id="logo"><g id="Group-3"><g class="cls-2"><path id="Fill-1" class="cls-1" d="M55.61,2.65V65.52A2.65,2.65,0,0,1,53,68.17H16.65A2.65,2.65,0,0,0,14,70.83V97.18s1.12,2.65,2.58,2.56L55.07,101H69.35A2.65,2.65,0,0,0,72,98.35V2.65A2.65,2.65,0,0,0,69.35,0H58.26a2.65,2.65,0,0,0-2.65,2.65"/></g></g><g id="Group-6"><g class="cls-3"><path id="Fill-4" class="cls-1" d="M102.39,219.33V145.89a2.66,2.66,0,0,1,2.65-2.67h36.31a2.66,2.66,0,0,0,2.65-2.67V116.67a2.66,2.66,0,0,0-2.65-2.67H88.65A2.66,2.66,0,0,0,86,116.67V219.33A2.66,2.66,0,0,0,88.65,222H99.74a2.66,2.66,0,0,0,2.65-2.67"/></g></g><path id="Fill-7" class="cls-1" d="M114.07,86.78V62.69A2.68,2.68,0,0,0,111.39,60H88.68A2.68,2.68,0,0,0,86,62.69V98.31A2.69,2.69,0,0,0,88.68,101h68.64A2.69,2.69,0,0,0,160,98.31V92.16a2.68,2.68,0,0,0-2.68-2.69H116.75a2.69,2.69,0,0,1-2.68-2.69"/><path id="Fill-9" class="cls-1" d="M45.47,130.51v43.85A2.65,2.65,0,0,0,48.13,177H69.35A2.65,2.65,0,0,0,72,174.35V116.64A2.65,2.65,0,0,0,69.35,114l-66.69.08A2.65,2.65,0,0,0,0,116.73v8.48a2.65,2.65,0,0,0,2.65,2.65H42.82a2.65,2.65,0,0,1,2.65,2.65"/><path id="Fill-11" class="cls-1" d="M111.33,46H88.67A2.67,2.67,0,0,1,86,43.33V20.67A2.67,2.67,0,0,1,88.67,18h22.65A2.67,2.67,0,0,1,114,20.67V43.33A2.67,2.67,0,0,1,111.33,46"/><path id="Fill-13" class="cls-1" d="M144.34,79H130.66A2.66,2.66,0,0,1,128,76.34V62.66A2.66,2.66,0,0,1,130.66,60h13.68A2.66,2.66,0,0,1,147,62.66V76.34A2.66,2.66,0,0,1,144.34,79"/></g></g></g></g></g></svg>
+</a>
+</div>
 </main>
+
 {{ partial "footer" . }}

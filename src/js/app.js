@@ -43,13 +43,13 @@ $( ".today" ).click(function() {
 
 // Delay scrolling
 
-$('body').addClass('stop-scrolling')
+$('.home').addClass('stop-scrolling')
 
 
 
 setTimeout(
     function() {
-        $('body').removeClass('stop-scrolling')
+        $('.home').removeClass('stop-scrolling')
        
     }, 3500);
 
@@ -73,6 +73,13 @@ setTimeout(
 
 // make links live
 
+$('.future').click(function(e) {
+    e.preventDefault();
+    //do other stuff when a click happens
+});
+
+
+// back button
 
 $(function() {
     if ( document.location.href.indexOf('#calendar') > -1 ) {
@@ -80,6 +87,12 @@ $(function() {
     }
 });
 
+
+
+
+
+
+// page transition
 
 // header open
 
@@ -90,6 +103,9 @@ TweenMax.to(".ground--back", 1, { fill: "#272067", delay: 1, ease: Expo.easeIn }
 TweenMax.to(".ground--middle", 1, { fill: "#1E1759", delay: 1, ease: Expo.easeIn });
 TweenMax.to(".home", .85, { backgroundColor: "#1A144F", delay: 1.5, ease: Expo.easeIn });
 TweenMax.to(".banner__title", .85, { opacity:"1", delay: 2, ease: Expo.easeIn });
+
+TweenMax.to(".candle", .85, { opacity:"1", ease: Expo.easeIn });
+TweenMax.to(".wreath", .85, { opacity:"0", delay: 2.5, ease: Expo.easeIn });
 
 
 

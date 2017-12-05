@@ -1,4 +1,4 @@
-
+/* eslint-disable */
 
 $(function(){
   'use strict';
@@ -35,7 +35,11 @@ $(function(){
         $container.html($newContent);
 
       }
-    }
+    },
+
+    onAfter: function() {
+ window.ga("send", "pageview", window.location.pathname)
+  }
   },
   smoothState = $('#main').smoothState(options).data('smoothState');
 });

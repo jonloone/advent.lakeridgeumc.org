@@ -18,13 +18,23 @@
 
 
  a{
- 	color:var(--rose);
- 	font-family:var(--font-title);
+ 	color:var(--gold);
+ 	font-family:var(--font-body);
  	//text-transform:uppercase;
 	transition:all .4s ease;
 
  }
 
  a:hover{
- 		color:var(--gold);
+ 		color:var(--white);
+ 	}
+
+
+
+
+
+ 	p{
+ 		color:var(--white);
+ 		font-family:var(--font-body);
+ 		font-style:normal;
  	}

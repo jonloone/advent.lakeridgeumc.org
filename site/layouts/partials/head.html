@@ -24,4 +24,6 @@
 
     <link rel="stylesheet" href="css/main.css"/>
   </head>
-  <body class="home">
+<body{{ with .Type }} class="{{ . }}" {{ end }}>
+
+

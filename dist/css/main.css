@@ -388,14 +388,19 @@ blockquote{
         src:url("../webfonts/7e3760d0-1767-4195-9f6d-fabdf91be0ca.eot?#iefix") format("eot"),url("../webfonts/5ed1fd3c-5fa8-4b16-831f-29abd6a8631d.woff2") format("woff2"),url("../webfonts/cddac412-1b5b-4910-aed1-ac66c529913a.woff") format("woff"),url("../webfonts/4c53ee65-cb9d-4e09-8d45-d4bd222103f5.ttf") format("truetype"),url("../webfonts/848a5cb0-1a05-47a9-8c07-1790413bff8c.svgrgba(132, 138, 92, 0.6902)-1a05-47a9-8c07-1790413bff8c") format("svg");
     }
 a{
- 	color:#E55B7D;
- 	font-family:'TrendSansOne';
+ 	color:#FFB860;
+ 	font-family:"Klang W01";
  	//text-transform:uppercase;
 	transition:all .4s ease;
 
  }
 a:hover{
- 		color:#FFB860;
+ 		color:#FFFEFC;
+ 	}
+p{
+ 		color:#FFFEFC;
+ 		font-family:"Klang W01";
+ 		font-style:normal;
  	}
 html{
 	overflow-y: scroll;
@@ -432,6 +437,38 @@ a{
 {
 	background-color:  #00002E;
 }
+@-webkit-keyframes textrule {
+    0% {}
+    65% {
+        width: 90%;
+    }
+    70% {
+        background-position: 45% 0%;
+    }
+    80% {
+        background-position: 80% 0%;
+    }
+    100% {
+        background-position: 80% 0%;
+        width: 90%;
+    }
+}
+@keyframes textrule {
+    0% {}
+    65% {
+        width: 90%;
+    }
+    70% {
+        background-position: 45% 0%;
+    }
+    80% {
+        background-position: 80% 0%;
+    }
+    100% {
+        background-position: 80% 0%;
+        width: 90%;
+    }
+}
 @-webkit-keyframes fadeIn {
     from {
         -webkit-transform: translate3d(0, 0, 0);
@@ -461,8 +498,9 @@ a{
     }
     to {
         visibility: hidden;
-        -webkit-transform: translate3d(0, 100%, 0);
-                transform: translate3d(0, 100%, 0);
+         -webkit-transform: rotateY(-180deg) ;
+                 transform: rotateY(-180deg) ;
+
     }
 }
 @keyframes slideOutmobile {
@@ -472,14 +510,15 @@ a{
     }
     to {
         visibility: hidden;
-        -webkit-transform: translate3d(0, 100%, 0);
-                transform: translate3d(0, 100%, 0);
+         -webkit-transform: rotateY(-180deg) ;
+                 transform: rotateY(-180deg) ;
+
     }
 }
 @-webkit-keyframes slideInmobile {
     from {
-        -webkit-transform: translate3d(0, 100%, 0);
-                transform: translate3d(0, 100%, 0);
+        -webkit-transform: rotateY(-180deg) ;
+                transform: rotateY(-180deg) ;
         visibility: visible;
     }
     to {
@@ -489,8 +528,8 @@ a{
 }
 @keyframes slideInmobile {
     from {
-        -webkit-transform: translate3d(0, 100%, 0);
-                transform: translate3d(0, 100%, 0);
+        -webkit-transform: rotateY(-180deg) ;
+                transform: rotateY(-180deg) ;
         visibility: visible;
     }
     to {
@@ -520,33 +559,32 @@ a{
                 transform: translate3d(0, 0, 0);
     }
 }
-#main .anim_element {
-    -webkit-animation-duration: .25s;
-            animation-duration: .25s;
+#main.anim_element {
+    -webkit-animation-duration: 1s;
+            animation-duration: 1s;
     transition-timing-function: ease-in;
     -webkit-animation-fill-mode: both;
             animation-fill-mode: both;
+     -webkit-transform-origin:  0% 50%;
+             transform-origin:  0% 50%;
 }
-#main .anim_element--fadeIn {
+#main.anim_element--fadeIn {
     -webkit-animation-name: fadeIn;
             animation-name: fadeIn;
 }
-#main .anim_element--slideInUp {
-    -webkit-animation-name: slideInLeft;
-            animation-name: slideInLeft;
-    @include media("<large") {
+#main.anim_element--slideInUp {
+
         -webkit-animation-name: slideInmobile;
+
                 animation-name: slideInmobile;
-    }
+ 
 }
-#main.is-exiting .anim_element {
-    -webkit-animation-name: fadeIn;
-            animation-name: fadeIn;
-    @include media("<large") {
+#main.is-exiting.anim_element {
+ 
         -webkit-animation-name: slideOutmobile;
+ 
                 animation-name: slideOutmobile;
-    }
-    // animation-direction: alternate-reverse;
+ 
 }
 #main.is-exiting .spinner {
     /* Show loader when there's no page transition */
@@ -555,6 +593,80 @@ a{
 #main .spinner {
     /* Hide loader when there's no page transition */
     opacity: 0;
+}
+/*==============================
+=            Loader            =
+==============================*/
+.spinner--wrapper {}
+.spinner {
+    position: fixed;
+    z-index: 98;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    height: 100vh;
+    width: 100vw;
+    display: -webkit-box!important;
+    display: -ms-flexbox!important;
+    display: flex!important;
+    transition: opacity .4s ease;
+    margin: auto;
+    background: rgba(255, 254, 252, 0.9);
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    pointer-events: none;
+}
+.spinner > div {
+    background-color: #FFB860;
+    height: 50px;
+    width: 6px;
+    margin-left: 4px;
+    margin-left: .25rem;
+    display: inline-block;
+    -webkit-animation: sk-stretchdelay 1.2s infinite ease-in-out;
+    animation: sk-stretchdelay 1.2s infinite ease-in-out;
+}
+.spinner .rect2 {
+    -webkit-animation-delay: -1.1s;
+    animation-delay: -1.1s;
+}
+.spinner .rect3 {
+    -webkit-animation-delay: -1.0s;
+    animation-delay: -1.0s;
+}
+.spinner .rect4 {
+    -webkit-animation-delay: -0.9s;
+    animation-delay: -0.9s;
+}
+.spinner .rect5 {
+    -webkit-animation-delay: -0.8s;
+    animation-delay: -0.8s;
+}
+@-webkit-keyframes sk-stretchdelay {
+    0%,
+    40%,
+    100% {
+        -webkit-transform: scaleY(0.4)
+    }
+    20% {
+        -webkit-transform: scaleY(1.0)
+    }
+}
+@keyframes sk-stretchdelay {
+    0%,
+    40%,
+    100% {
+        transform: scaleY(0.4);
+        -webkit-transform: scaleY(0.4);
+    }
+    20% {
+        transform: scaleY(1.0);
+        -webkit-transform: scaleY(1.0);
+    }
 }
 [data-aos][data-aos][data-aos-duration="50"],
 body[data-aos-duration="50"] [data-aos] {
@@ -1606,422 +1718,6 @@ body[data-aos-easing=ease-in-out-quart] [data-aos] {
   }
 
       }
-.no-scroll {
-    overflow: hidden;
-}
-.day__content {
-
-    -webkit-transform: translateY(200vh);
-
-            transform: translateY(200vh);
-    position: fixed;
-    width:100%;
-    height: 100%;
-    min-height: 100vh;
-    z-index: 99999999;
-
-    transition: all 1s ease;
-
-    background: #34446A;
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-align: center;
-        -ms-flex-align: center;
-            align-items: center;
-    -webkit-box-pack: center;
-        -ms-flex-pack: center;
-            justify-content: center;
-
-    padding: 8px;
-    padding: .5rem;
-    overflow-y: scroll;
-    top: 0;
-    right: 0;
-    bottom: 0;
-    left: 0
-}
-@media (min-width: 700px) {
-  .day__content{
-        padding: 2rem;
-  }
-    }
-.day__content.remodal-is-initialized{
-    -webkit-transform:translateY(0);
-            transform:translateY(0);
-}
-.day__content.box-close {
-
-    -webkit-transform: translateY(0vh);
-
-            transform: translateY(0vh);
-}
-/* Page content */
-.quote {
-
-height:100%;
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-align: center;
-        -ms-flex-align: center;
-            align-items: center;
-
-    -webkit-box-pack: center;
-
-        -ms-flex-pack: center;
-
-            justify-content: center;
-    -webkit-box-orient: vertical;
-    -webkit-box-direction: normal;
-        -ms-flex-direction: column;
-            flex-direction: column;
-    width: 100%
-}
-@media (min-width: 700px) {
-  .quote{
-        width: 50%;
-  }
-    }
-.quote p {
-    font-family: "Klang W01";
-    font-size: 20px;
-    font-size: 1.25rem;
-    letter-spacing: 2px;
-    color: #00002E;
-}
-p.quote__intro {
-    padding-top: 20vh;
-    font-family: "Klang W01";
-    font-size: 24px;
-    font-size: 1.5rem;
-    text-align: left;
-    margin-bottom: 10vh;
-
-
-    color: #F9C68F
-}
-@media (min-width: 700px) {
-  p.quote__intro{
-        text-align: center;
-        font-size: 3vw;
-  }
-    }
-.quote img {
-    width:40%;
-    height:auto;
-}
-.day-2 .day__content {
-    background: #E55B7D;
-}
-.day-3 .day__content {
-    background: #21A8D9
-}
-.day-3 .day__content .quote__intro{
-        color: #34446A;
-}
-.day-3 .day__content img{
-        width: 40%;
-}
-/*=============================
-=            modal            =
-=============================*/
-/*
- *  Remodal - v1.1.1
- *  Responsive, lightweight, fast, synchronized with CSS animations, fully customizable modal window plugin with declarative configuration and hash tracking.
- *  http://vodkabears.github.io/remodal/
- *
- *  Made by Ilya Makarov
- *  Under MIT License
- */
-/* ==========================================================================
-   Remodal's default mobile first theme
-   ========================================================================== */
-/* Default theme styles for the background */
-.remodal-bg.remodal-is-opening,
-.remodal-bg.remodal-is-opened {
-  -webkit-filter: blur(3px);
-  filter:url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg"><filter id="filter"><feGaussianBlur stdDeviation="3" /></filter></svg>#filter');
-  filter: blur(3px);
-}
-/* Default theme styles of the overlay */
-.remodal-overlay {
-  background: rgba(43, 46, 56, .9);
-}
-.remodal-overlay.remodal-is-opening,
-.remodal-overlay.remodal-is-closing {
-  -webkit-animation-duration: 0.3s;
-  animation-duration: 0.3s;
-  -webkit-animation-fill-mode: forwards;
-  animation-fill-mode: forwards;
-}
-.remodal-overlay.remodal-is-opening {
-  -webkit-animation-name: remodal-overlay-opening-keyframes;
-  -webkit-animation-name: remodal-overlay-opening-keyframes;
-  animation-name: remodal-overlay-opening-keyframes;
-  animation-name: remodal-overlay-opening-keyframes;
-}
-.remodal-overlay.remodal-is-closing {
-  -webkit-animation-name: remodal-overlay-closing-keyframes;
-  -webkit-animation-name: remodal-overlay-closing-keyframes;
-  animation-name: remodal-overlay-closing-keyframes;
-  animation-name: remodal-overlay-closing-keyframes;
-}
-/* Default theme styles of the wrapper */
-.remodal-wrapper {
-  padding: 10px 10px 0;
-}
-/* Default theme styles of the modal dialog */
-.remodal {
-  box-sizing: border-box;
-  width: 100%;
-  margin-bottom: 10px;
-  padding: 35px;
-
-  -webkit-transform: translate3d(0, 0, 0);
-  transform: translate3d(0, 0, 0);
-
-  color: #FFB860;
-  background: #34446A;
-}
-.remodal.remodal-is-opening,
-.remodal.remodal-is-closing {
-  -webkit-animation-duration: 0.3s;
-  animation-duration: 0.3s;
-  -webkit-animation-fill-mode: forwards;
-  animation-fill-mode: forwards;
-}
-.remodal.remodal-is-opening {
-  -webkit-animation-name: remodal-opening-keyframes;
-  -webkit-animation-name: remodal-opening-keyframes;
-  animation-name: remodal-opening-keyframes;
-  animation-name: remodal-opening-keyframes;
-}
-.remodal.remodal-is-closing {
-  -webkit-animation-name: remodal-closing-keyframes;
-  -webkit-animation-name: remodal-closing-keyframes;
-  animation-name: remodal-closing-keyframes;
-  animation-name: remodal-closing-keyframes;
-}
-/* Vertical align of the modal dialog */
-.remodal,
-.remodal-wrapper:after {
-  vertical-align: middle;
-}
-/* Close button */
-.remodal-close {
-  position: absolute;
-  bottom: 10vh;
-  right:0;
-  margin:auto;
-  left: 0;
-
-  display: block;
-  overflow: visible;
-
-  width: 55px;
-  height: 55px;
-
-  padding: 0;
-
-  cursor: pointer;
-  transition: color 0.2s;
-  text-decoration: none;
-
-  color: white;
-  border: 0;
-  outline: 0;
-  background: transparent;
-}
-.remodal-close:hover,
-.remodal-close:focus {
-  color: #2b2e38;
-}
-.remodal-close:before {
-  font-family: Arial, "Helvetica CY", "Nimbus Sans L", sans-serif !important;
-  font-size: 55px;
-  line-height: 35px;
-
-  position: absolute;
-  top: 0;
-  left: 0;
-  right:0;
-  margin:auto;
-
-  display: block;
-
-  width: 55px;
-
-  content: "\00d7";
-  text-align: center;
-}
-/* Dialog buttons */
-.remodal-confirm,
-.remodal-cancel {
-  font: inherit;
-
-  display: inline-block;
-  overflow: visible;
-
-  min-width: 110px;
-  margin: 0;
-  padding: 12px 0;
-
-  cursor: pointer;
-  transition: background 0.2s;
-  text-align: center;
-  vertical-align: middle;
-  text-decoration: none;
-
-  border: 0;
-  outline: 0;
-}
-.remodal-confirm {
-  color: #fff;
-  background: #81c784;
-}
-.remodal-confirm:hover,
-.remodal-confirm:focus {
-  background: #66bb6a;
-}
-.remodal-cancel {
-  color: #fff;
-  background: #e57373;
-}
-.remodal-cancel:hover,
-.remodal-cancel:focus {
-  background: #ef5350;
-}
-/* Remove inner padding and border in Firefox 4+ for the button tag. */
-.remodal-confirm::-moz-focus-inner,
-.remodal-cancel::-moz-focus-inner,
-.remodal-close::-moz-focus-inner {
-  padding: 0;
-
-  border: 0;
-}
-/* Keyframes
-   ========================================================================== */
-@-webkit-keyframes remodal-opening-keyframes {
-  from {
-    -webkit-transform: scale(1.05);
-    transform: scale(1.05);
-
-    opacity: 0;
-  }
-  to {
-    -webkit-transform: none;
-    transform: none;
-
-    opacity: 1;
-
-    -webkit-filter: blur(0);
-    filter:url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg"><filter id="filter"><feGaussianBlur stdDeviation="0" /></filter></svg>#filter');
-    filter: blur(0);
-  }
-}
-@keyframes remodal-opening-keyframes {
-  from {
-    -webkit-transform: scale(1.05);
-    transform: scale(1.05);
-
-    opacity: 0;
-  }
-  to {
-    -webkit-transform: none;
-    transform: none;
-
-    opacity: 1;
-
-    -webkit-filter: blur(0);
-    filter:url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg"><filter id="filter"><feGaussianBlur stdDeviation="0" /></filter></svg>#filter');
-    filter: blur(0);
-  }
-}
-@-webkit-keyframes remodal-closing-keyframes {
-  from {
-    -webkit-transform: scale(1);
-    transform: scale(1);
-
-    opacity: 1;
-  }
-  to {
-    -webkit-transform: scale(0.95);
-    transform: scale(0.95);
-
-    opacity: 0;
-
-    -webkit-filter: blur(0);
-    filter:url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg"><filter id="filter"><feGaussianBlur stdDeviation="0" /></filter></svg>#filter');
-    filter: blur(0);
-  }
-}
-@keyframes remodal-closing-keyframes {
-  from {
-    -webkit-transform: scale(1);
-    transform: scale(1);
-
-    opacity: 1;
-  }
-  to {
-    -webkit-transform: scale(0.95);
-    transform: scale(0.95);
-
-    opacity: 0;
-
-    -webkit-filter: blur(0);
-    filter:url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg"><filter id="filter"><feGaussianBlur stdDeviation="0" /></filter></svg>#filter');
-    filter: blur(0);
-  }
-}
-@-webkit-keyframes remodal-overlay-opening-keyframes {
-  from {
-    opacity: 0;
-  }
-  to {
-    opacity: 1;
-  }
-}
-@keyframes remodal-overlay-opening-keyframes {
-  from {
-    opacity: 0;
-  }
-  to {
-    opacity: 1;
-  }
-}
-@-webkit-keyframes remodal-overlay-closing-keyframes {
-  from {
-    opacity: 1;
-  }
-  to {
-    opacity: 0;
-  }
-}
-@keyframes remodal-overlay-closing-keyframes {
-  from {
-    opacity: 1;
-  }
-  to {
-    opacity: 0;
-  }
-}
-/* Media queries
-   ========================================================================== */
-@media only screen and (min-width: 641px) {
-  .remodal {
-    max-width: 100%;
-  }
-}
-/* IE8
-   ========================================================================== */
-.lt-ie9 .remodal-overlay {
-  background: #2b2e38;
-}
-.lt-ie9 .remodal {
-  width: 700px;
-}
-/*=====  End of modal  ======*/
 .banner {
     height: 100vh;
     width: 100%;
@@ -2246,13 +1942,168 @@ width:auto;
         top: -5rem;
   }
     }
-main{
-	background:#00002E;
-	height:100%;
-	width:100%;
-  position:relative;
+.social{
+	display:-webkit-box;
+	display:-ms-flexbox;
+	display:flex;
+	-webkit-box-align:center;
+	    -ms-flex-align:center;
+	        align-items:center;
+	-webkit-box-pack:start;
+	    -ms-flex-pack:start;
+	        justify-content:flex-start
 }
-.main-day{
+.social a{
+		margin-right:32px;
+		margin-right:2rem;
+}
+.fbicon,.twitter{
+	width:30px;
+	height:30px
+}
+.fbicon path, .twitter path{
+		fill:#FFFEFC;
+		transition:all .4s ease;
+}
+.fbicon:hover path, .twitter:hover path{
+
+	fill:#FFB860;
+}
+.social__logo{
+	width:30px;
+	height:40px
+
+}
+.social__logo path{
+		fill:#FFFEFC;
+		transition:all .4s ease;
+}
+.social__logo:hover path{
+
+	fill:#FFB860;
+}
+main {
+    background: #00002E;
+    height: 100%;
+    width: 100%;
+    position: relative;
+}
+.main-day {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: start;
+        -ms-flex-align: start;
+            align-items: flex-start;
+    -webkit-box-pack: start;
+        -ms-flex-pack: start;
+            justify-content: flex-start;
+    width: 100%;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    min-height: 100vh;
+    padding: 32px;
+    padding: 2rem;
+background-size: cover!important;
+    background-position: left!important;
+    background-repeat: no-repeat!important;
+	position:relative
+}
+.main-day h1{
+        font-family: 'TrendSansOne';
+        color: #FFFEFC;
+        font-size: 16px;
+        font-size: 1rem;
+        text-transform: uppercase;
+        font-weight: 100;
+        letter-spacing: 2px;
+}
+.main-topbar {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    width: 100%;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+}
+.closepage {
+
+    width: 20px;
+    height: 20px;
+    transition: all .4s ease
+}
+.closepage path{
+        transition: all .4s ease;
+}
+.closepage:hover path{
+        fill: #E55B7D;
+}
+.quote {
+	margin-top:10vh;
+    max-width: 1000px;
+    min-height: 30vh;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: start;
+        -ms-flex-align: start;
+            align-items: flex-start;
+    -webkit-box-pack: start;
+        -ms-flex-pack: start;
+            justify-content: flex-start;
+    -webkit-box-orient:vertical;
+    -webkit-box-direction:normal;
+        -ms-flex-direction:column;
+            flex-direction:column
+}
+.quote p{
+    	font-size:24px;
+    	font-size:1.5rem;
+}
+p.quote__intro {
+    font-size: 24px;
+    font-size: 1.5rem;
+    margin-top: 0
+}
+@media (min-width: 700px) {
+  p.quote__intro{
+font-size: 3rem;
+  }
+    }
+.resources{
+	display:-webkit-box;
+	display:-ms-flexbox;
+	display:flex;
+	-webkit-box-align:start;
+	    -ms-flex-align:start;
+	        align-items:flex-start;
+	-webkit-box-orient:vertical;
+	-webkit-box-direction:normal;
+	    -ms-flex-direction:column;
+	        flex-direction:column;
+	margin-bottom:32px;
+	margin-bottom:2rem
+}
+.resources h1{
+		color:#00002E;
+		font-family:'TrendSansOne';
+}
+.resources h3{
+		margin-top:0;
+}
+.prayer{
+	text-align:center;
+	margin-top:2vh;
 	display:-webkit-box;
 	display:-ms-flexbox;
 	display:flex;
@@ -2263,14 +2114,39 @@ main{
 	    -ms-flex-pack:center;
 	        justify-content:center;
 	width:100%;
-	-webkit-box-orient:vertical;
-	-webkit-box-direction:normal;
-	    -ms-flex-direction:column;
-	        flex-direction:column;
+	margin-bottom:10vh
 }
-.quote{
-	padding:32px;
-	padding:2rem;
+.prayer p{
+	  	font-size:20px;
+	  	font-size:1.25rem;
+	  	max-width:50%;
+}
+.wreath{
+	width:100%;
+	height:100%;
+	min-height:100vh;
+	position:absolute;
+	z-index:999999;
+	background:#00002E;
+	left:0;
+	top:0;
+	display:-webkit-box;
+	display:-ms-flexbox;
+	display:flex;
+	-webkit-box-align:center;
+	    -ms-flex-align:center;
+	        align-items:center;
+	-webkit-box-pack:center;
+	    -ms-flex-pack:center;
+	        justify-content:center;
+	pointer-events:none
+}
+.wreath svg{
+		width:40%;
+		height:40%;
+}
+.candle{
+	opacity:0;
 }
 .calendar {
 
