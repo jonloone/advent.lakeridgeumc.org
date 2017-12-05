@@ -1,3 +1,90 @@
+
+@keyframes fadeIn {
+    from {
+        transform: translate3d(0, 0, 0);
+    }
+    to {
+        visibility: hidden;
+        transform: translate3d(100%, 0, 0);
+    }
+}
+
+@keyframes slideOutmobile {
+    from {
+        transform: translate3d(0, 0, 0);
+    }
+    to {
+        visibility: hidden;
+        transform: translate3d(0, 100%, 0);
+    }
+}
+
+@keyframes slideInmobile {
+    from {
+        transform: translate3d(0, 100%, 0);
+        visibility: visible;
+    }
+    to {
+        transform: translate3d(0, 0, 0);
+    }
+}
+
+@keyframes slideInLeft {
+    from {
+        transform: translate3d(100%, 0, 0);
+        visibility: visible;
+    }
+    to {
+        transform: translate3d(0, 0, 0);
+    }
+}
+
+#main .anim_element {
+    animation-duration: .25s;
+    transition-timing-function: ease-in;
+    animation-fill-mode: both;
+}
+
+#main .anim_element--fadeIn {
+    animation-name: fadeIn;
+}
+
+#main .anim_element--slideInUp {
+    animation-name: slideInLeft;
+    @include media("<large") {
+        animation-name: slideInmobile;
+    }
+}
+
+#main.is-exiting .anim_element {
+    animation-name: fadeIn;
+    @include media("<large") {
+        animation-name: slideOutmobile;
+    }
+    // animation-direction: alternate-reverse;
+}
+
+#main.is-exiting .spinner {
+    /* Show loader when there's no page transition */
+    opacity: 1;
+}
+
+#main .spinner {
+    /* Hide loader when there's no page transition */
+    opacity: 0;
+}
+
+
+
+
+
+
+
+
+
+
+
+
 [data-aos][data-aos][data-aos-duration="50"],
 body[data-aos-duration="50"] [data-aos] {
     transition-duration: 50ms

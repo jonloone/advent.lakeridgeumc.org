@@ -3,25 +3,32 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
-    <loc>/post/first/</loc>
-    <lastmod>2017-11-30T21:18:47-06:00</lastmod>
+    <loc>/december/1st/</loc>
   </url>
   
   <url>
-    <loc>/day1/</loc>
-    <lastmod>2017-11-30T21:18:16-06:00</lastmod>
+    <loc>/december/2nd/</loc>
+  </url>
+  
+  <url>
+    <loc>/december/3rd/</loc>
+  </url>
+  
+  <url>
+    <loc>/december/4th/</loc>
+  </url>
+  
+  <url>
+    <loc>/december/5th/</loc>
+  </url>
+  
+  <url>
+    <loc>/december/</loc>
+    <priority>0</priority>
   </url>
   
   <url>
     <loc>/</loc>
-    <lastmod>2017-11-30T21:18:47-06:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>/post/</loc>
-    <lastmod>2017-11-30T21:18:47-06:00</lastmod>
-    <priority>0</priority>
   </url>
   
 </urlset>

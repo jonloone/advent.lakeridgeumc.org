@@ -1,6 +1,6 @@
 // JS Goes here - ES6 supported
 import { Expo, TweenMax } from "gsap";
-import 'smoothstate';
+import smoothstate from 'smoothstate';
 import AOS from 'aos';
 
  AOS.init();
@@ -22,6 +22,8 @@ target.each(function(){
   }
   if (todaysDate < day){
     $(this).parent().addClass('future');
+     $(this).parent().addClass('peek');
+            $(this).parent().append('<div class="no-peek"><h2>No Peeking!</h2></div>');
   }
   if (todaysDate > day){
     $(this).parent().addClass('past')
@@ -31,20 +33,14 @@ target.each(function(){
 // handle clicks on days
 
 
+
+$( ".today" ).click(function() {
+  $( this ).toggleClass( "expanded" );
+});
+
 // close modal
 
 
-
-$('.today .day__content').click(function(){
-var inst = $('[data-remodal-id=modal]').remodal();
-inst.close();
-})
-
-
-$('.today').click(function(){
-var inst = $('[data-remodal-id=modal]').remodal();
-inst.open();
-})
 // Delay scrolling
 
 $('body').addClass('stop-scrolling')
@@ -60,8 +56,29 @@ setTimeout(
 
 
 
+// no peek!
+
+$(function() {
+    $('.peek').click(function() {
+        $(this).addClass('peek-open');
+
+setTimeout(
+    function() {
+        $('.peek').removeClass('peek-open') }, 
+        1000);
+
+    });
+});
 
 
+// make links live
+
+
+$(function() {
+    if ( document.location.href.indexOf('#calendar') > -1 ) {
+        $('body').removeClass('stop-scrolling');
+    }
+});
 
 
 // header open

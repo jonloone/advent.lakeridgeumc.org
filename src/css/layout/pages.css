@@ -4,3 +4,20 @@ main{
 	width:100%;
   position:relative;
 }
+
+
+
+
+
+.main-day{
+	display:flex;
+	align-items:center;
+	justify-content:center;
+	width:100%;
+	flex-direction:column;
+}
+
+
+.quote{
+	padding:2rem;
+}
