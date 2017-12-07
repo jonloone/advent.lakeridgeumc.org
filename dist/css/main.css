@@ -2097,7 +2097,10 @@ font-size: 3rem;
 	    -ms-flex-direction:column;
 	        flex-direction:column;
 	margin-bottom:32px;
-	margin-bottom:2rem
+	margin-bottom:2rem;
+    width:100%;
+    margin-top:32px;
+    margin-top:2rem
 }
 .resources h1{
 		color:#00002E;
@@ -2124,8 +2127,12 @@ font-size: 3rem;
 .prayer p{
 	  	font-size:20px;
 	  	font-size:1.25rem;
-	  	max-width:50%;
 }
+@media (min-width: 700px) {
+  .prayer p{
+	  	max-width:50%;
+  }
+      }
 .wreath{
 	width:100%;
 	height:100%;
@@ -2153,6 +2160,8 @@ font-size: 3rem;
 .candle{
 	opacity:0;
 }
+.embed-container { position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; max-width: 100%; }
+.embed-container iframe, .embed-container object, .embed-container embed { position: absolute; top: 0; left: 0; width: 100%; height: 100%; }
 .calendar {
 
     display: -ms-grid;
