@@ -114,6 +114,11 @@ width:auto;
     }
 }
 
+
+
+.today{
+  position:relative;
+}
 .today  h1 {
         
         transition-delay: .5s;
@@ -352,7 +357,7 @@ opacity:1;
     // grid-row: 1/4;
     // grid-column: 5/9;
           @media (--small-only) {
-          grid-column-end: span 3;
+          grid-column-end: span 4;
 grid-row-end: span 2;
 }
     @media (--medium) {
@@ -370,7 +375,7 @@ grid-row-end: span 2;
           
     @media (--small-only) {
               grid-row-end: span 2;
-                 grid-column-end: span 4;
+                 grid-column-end: span 5;
                  }
                         
     @media (--medium) {
@@ -386,7 +391,7 @@ grid-row-end: span 2;
     // grid-row: 4/6;
     // grid-column: 1/7;
           @media (--small-only) {
-            grid-column-end: span 4;
+            grid-column-end: span 5;
           grid-row-end: span 2;
         }
     @media (--medium) {
@@ -411,7 +416,7 @@ grid-row-end: span 2;
   background-position:center;
      @media (--small-only) {
   grid-column-end: span 1;
-  grid-row-end: span 2;
+  grid-row-end: span 3;
 }
 
 }
@@ -421,13 +426,13 @@ grid-row-end: span 2;
 padding:1rem;
 padding-left:2rem;
 display:flex;
-width:100%;
-height:100%;
+
 align-items:flex-start;
 justify-content:center;
 flex-direction:column;
+ grid-row-end: span 7;
      @media (--small-only) {
-  grid-column-end: span 4;
+  grid-column-end: span 5;
   grid-row-end: span 6;
 }
 
@@ -574,7 +579,7 @@ transition:all .4s ease;
     background-size: 50%;
     background-position: center;
         // grid-row: 4/6;
-    grid-row-end: span 6;
+
    @media (--small-only) {
    grid-column-end: span 1;
       grid-row-end: span 2;
@@ -595,7 +600,7 @@ transition:all .4s ease;
         // grid-row: 6/8;
     // grid-column: 1/5;
        @media (--small-only) {
-   grid-column-end: span 3;
+   grid-column-end: span 4;
       grid-row-end: span 3;
    }
     @media (--medium) {
@@ -629,7 +634,7 @@ transition:all .4s ease;
            // grid-row: 8/10;
     // grid-column: 1/6;
                @media (--small-only) {
-   grid-column-end: span 3;
+   grid-column-end: span 4;
       grid-row-end: span 1;
    }
     @media (--medium) {
@@ -645,7 +650,7 @@ transition:all .4s ease;
       // grid-row: 8/10;
     // grid-column: 6/9;
                    @media (--small-only) {
-   grid-column-end: span 4;
+   grid-column-end: span 5;
       grid-row-end: span 2;
    }
     @media (--medium) {
@@ -662,7 +667,7 @@ transition:all .4s ease;
      // grid-row: 14/16;
     // grid-column: 1/6;
                        @media (--small-only) {
-   grid-column-end: span 4;
+   grid-column-end: span 5;
       grid-row-end: span 4;
    }
     @media (--medium) {
@@ -680,7 +685,7 @@ transition:all .4s ease;
     // grid-column: 6/9;
                @media (--small-only) {
    grid-column-end: span 1;
-      grid-row-end: span 3;
+      grid-row-end: span 4;
    }
     @media (--medium) {
         // grid-row: 11/13;
@@ -727,7 +732,7 @@ transition:all .4s ease;
         }
     }
            @media (--small-only) {
-   grid-column-end: span 4;
+   grid-column-end: span 5;
       grid-row-end: span 4;
    }
 
@@ -753,7 +758,7 @@ transition:all .4s ease;
         // grid-row: 16/19;
     // grid-column: 6/9;
                    @media (--small-only) {
-   grid-column-end: span 3;
+   grid-column-end: span 4;
       grid-row-end: span 3;
    }
     @media (--medium) {
@@ -771,7 +776,7 @@ transition:all .4s ease;
       // grid-row: 16/19;
     // grid-column: 1/6;
                        @media (--small-only) {
-   grid-column-end: span 3;
+   grid-column-end: span 4;
       grid-row-end: span 2;
    }
     @media (--medium) {
@@ -798,7 +803,7 @@ transition:all .4s ease;
     // grid-column: 6/9;
                            @media (--small-only) {
    grid-column-end: span 1;
-      grid-row-end: span 2;
+      grid-row-end: span 3;
    }
     @media (--medium) {
         // grid-row: 14/16;
@@ -832,7 +837,7 @@ transition:all .4s ease;
     // grid-row: 24/27;
     // grid-column: 1/9;
                            @media (--small-only) {
-   grid-column-end: span 3;
+   grid-column-end: span 4;
       grid-row-end: span 2;
    }
     @media (--medium) {
@@ -866,7 +871,7 @@ transition:all .4s ease;
         // grid-row: 32/34;
     // grid-column: 1/9;
                            @media (--small-only) {
-   grid-column-end: span 4;
+   grid-column-end: span 5;
       grid-row-end: span 2;
    }
     @media (--medium) {
@@ -882,7 +887,7 @@ transition:all .4s ease;
       // grid-row: 27/30;
     // grid-column: 1/9;
                            @media (--small-only) {
-   grid-column-end: span 4;
+   grid-column-end: span 5;
       grid-row-end: span 4;
    }
     @media (--medium) {
@@ -896,7 +901,7 @@ transition:all .4s ease;
      // grid-row: 30/32;
     // grid-column: 1/6;
                            @media (--small-only) {
-   grid-column-end: span 4;
+   grid-column-end: span 5;
       grid-row-end: span 2;
    }
     @media (--medium) {
@@ -922,7 +927,7 @@ transition:all .4s ease;
       // grid-row: 34/36;
     // grid-column: 1/6;
                            @media (--small-only) {
-   grid-column-end: span 3;
+   grid-column-end: span 4;
       grid-row-end: span 2;
    }
     @media (--medium) {
@@ -956,7 +961,7 @@ transition:all .4s ease;
       // grid-row: 37/39;
     // grid-column: 6/9;
                            @media (--small-only) {
-   grid-column-end: span 4;
+   grid-column-end: span 5;
       grid-row-end: span 2;
    }
     @media (--medium) {
@@ -972,7 +977,7 @@ transition:all .4s ease;
             // grid-row: 36/39;
     // grid-column: 1/6;
                                @media (--small-only) {
-   grid-column-end: span 3;
+   grid-column-end: span 4;
       grid-row-end: span 4;
    }
     @media (--medium) {
@@ -1007,7 +1012,7 @@ transition:all .4s ease;
           // grid-row: 42/45;
     // grid-column: 1/9;
                                @media (--small-only) {
-   grid-column-end: span 4;
+   grid-column-end: span 5;
       grid-row-end: span 2;
    }
     @media (--medium) {
@@ -1021,7 +1026,7 @@ transition:all .4s ease;
       // grid-row: 45/48;
     // grid-column: 1/9;
                                @media (--small-only) {
-   grid-column-end: span 4;
+   grid-column-end: span 5;
       grid-row-end: span 4;
    }
     @media (--medium) {
