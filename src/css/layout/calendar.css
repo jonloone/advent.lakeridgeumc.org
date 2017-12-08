@@ -16,14 +16,15 @@
 
 
 
+
 /*=======================================
 =            Grid date style            =
 =======================================*/
 
 .grid-item {
 
-    border-radius: 3px;
-    overflow: hidden;
+
+
     background: var(--purple);
     font-size: 250%;
     position: relative;
@@ -36,21 +37,28 @@
     cursor: pointer;
     transition: all .8s;
     background-position: 50% 200%;
+ 
 
 
     & h1 {
         font-weight: 300;
         position: relative;
         z-index: 5;
-        transition: all .4s ease;
+        transition: all .5s ease;
         font-family: var(--font-body);
         color: var(--purple-muted);
+        margin: 0;
+        transition-delay: .25s;
     }
 }
 
 
 
+.grid-item:hover {
+    & h1 {
 
+    }
+}
 
 
 .grid-item:before {
@@ -58,12 +66,15 @@
     background: var(--purple-dates);
     z-index: 2;
     position: absolute;
-
+    perspective: 800px;
     top: 0;
     left: 0;
     height: 100%;
     width: 100%;
     transition: all .4s ease;
+    transition: transform 1s;
+    transform-style: preserve-3d;
+    transform-origin: 50% 0%;
 }
 
 
@@ -84,6 +95,7 @@
 
 
 
+
 /*----------  future present past   ----------*/
 
 .future {}
@@ -96,33 +108,66 @@
     opacity: 0;
 }
 
-.today {
+
+
+
+
+
+.today:hover #date-featured {
+    background-size:110%;
+
+}
+
+
+
+#date-featured {
     height: 100%;
     width: 100%;
+    opacity:1;
 
-
+    z-index: 9999;
+    position: absolute;
+    transition: all .5s;
     background: url(../images/burst.svg) no-repeat;
     background-size: contain;
     background-position: center;
-    z-index: 9999;
-    position: absolute;
-    transition: all .4s;
 }
 
+
+.today #date-featured{
+            transition-delay: .30s;
+
+}
+
+.expanded #date-featured{
+    opacity: 0;
+    transform: rotateX(-90deg);
+    transform-style: preserve-3d;
+    transform-origin: -180% 0%;
+    transition-delay: 0s;
+
+    
+}
 
 
 
 /*=====  End of Grid date style  ======*/
 
 
-/*----------  Hover effect  ----------*/
+/*----------  Hover effect peek  ----------*/
 
-div[class^="day-"]:hover:before,
-div[class^="day-"]:hover h1,
-div[class^="day-"]:hover .today {
-    transform: translateY(-30%);
+div[class^="day-"].future:hover:before,
+div[class^="day-"]:hover h1 {
+  transform: rotateX(-30deg);
+  transition:all .4s ease;
+
 }
 
+
+
+div[class^="day-"]{
+   box-shadow: inset 2px 2px 9px rgba(8, 3, 41, 0.94);
+}
 
 
 
@@ -133,9 +178,7 @@ div[class^="day-"]:hover .today {
 =           Open Effect           =
 ==================================*/
 
-.expanded.grid-item:before {
-    transform: translateY(-100%);
-}
+.expanded.grid-item:before {}
 
 
 
@@ -146,10 +189,6 @@ div[class^="day-"]:hover .today {
 }
 
 
-.expanded.grid-item .today {
-    transform: scale(100);
-    transition: all 1s;
-}
 
 .expanded.grid-item:after {
     z-index: 100;
@@ -158,12 +197,21 @@ div[class^="day-"]:hover .today {
 
 
 
-.grid-item.expanded {
+.grid-item.expanded.future:before,
+.grid-item.expanded.today:before {
+    transform: rotateX(-180deg) skew(-2deg);
+    box-shadow: 16px 24px 44px rgba(2, 0, 10, .24);
+    z-index:9999;
+}
 
 
-    & h1 {
-        opacity: 0;
-    }
+.grid-item.expanded h1 {
+    opacity: 0;
+    transform: rotateX(-90deg) skew(-2deg);
+
+    transform-style: preserve-3d;
+    transform-origin:  -80% 0%;
+    transition-delay: 0s;
 }
 
 
@@ -207,12 +255,12 @@ div[class^="day-"]:hover .today {
 .grid-item:nth-child(3) {
     background: url(/images/day3.svg)no-repeat, var(--blue-muted);
     background-size: cover;
-   
+
     grid-row: 3/4;
     grid-column: 1/5;
-    background-position:50% -1rem;
+    background-position: 50% -1rem;
     @media (--medium) {
-         background-position: 30% 1rem;
+        background-position: 30% 1rem;
         grid-row: 1 / 3;
         grid-column: 7/9;
     }
@@ -268,7 +316,7 @@ div[class^="day-"]:hover .today {
         margin-top: 1rem;
     }
 
-      grid-row: 10/12;
+    grid-row: 10/12;
     grid-column: 1/9;
     @media (--medium) {
         grid-row: 4/6;
@@ -280,7 +328,7 @@ div[class^="day-"]:hover .today {
     background: url(/images/day5.svg)no-repeat, var(--blue-muted);
     background-size: 50%;
     background-position: center;
-        grid-row: 4/6;
+    grid-row: 4/6;
     grid-column: 7/9;
     @media (--medium) {
         grid-row: 6 / 8;
@@ -294,7 +342,7 @@ div[class^="day-"]:hover .today {
     background: url(/images/day6.svg)no-repeat, var(--blue-dark);
     background-size: cover;
     background-position: center;
-        grid-row: 6/8;
+    grid-row: 6/8;
     grid-column: 1/5;
     @media (--medium) {
         grid-row: 5 / 9;
@@ -307,7 +355,7 @@ div[class^="day-"]:hover .today {
     background: url(/images/day7.svg)no-repeat, var(--purple-muted);
     background-size: cover;
     background-position: center;
-            grid-row: 6/8;
+    grid-row: 6/8;
     grid-column: 5/9;
     @media (--medium) {
         grid-row: 3 / 6;
@@ -320,7 +368,7 @@ div[class^="day-"]:hover .today {
     background: url(/images/day8.svg)no-repeat, var(--purple);
     background-size: cover;
     background-position: center;
-           grid-row: 8/10;
+    grid-row: 8/10;
     grid-column: 1/6;
     @media (--medium) {
         grid-row: 4 / 6;
@@ -329,10 +377,10 @@ div[class^="day-"]:hover .today {
 }
 
 .day-9 {
-    background: url(/images/day9.svg)no-repeat, var(--purple-muted);
-    background-size: 175%;
+    background: url(/images/day9.svg)no-repeat, url(/images/day9-bg.svg)no-repeat, var(--purple-muted);
+    background-size: 80%, cover, cover;
     background-position: center;
-      grid-row: 8/10;
+    grid-row: 8/10;
     grid-column: 6/9;
     @media (--medium) {
         grid-row: 8 / 11;
@@ -345,7 +393,7 @@ div[class^="day-"]:hover .today {
     background: url(/images/day10.svg)no-repeat, var(--blue-dark);
     background-size: 60%;
     background-position: center;
-     grid-row: 14/16;
+    grid-row: 14/16;
     grid-column: 1/6;
     @media (--medium) {
         grid-row: 9 / 11;
@@ -358,7 +406,7 @@ div[class^="day-"]:hover .today {
     background: url(/images/day11.svg)no-repeat, url(/images/day11bg.svg)no-repeat, var(--rose);
     background-size: 30%, cover;
     background-position: center;
-          grid-row: 14/16;
+    grid-row: 14/16;
     grid-column: 6/9;
     @media (--medium) {
         grid-row: 11/13;
@@ -379,8 +427,8 @@ div[class^="day-"]:hover .today {
     justify-content: center;
     flex-direction: row;
     padding: .25rem;
-       
-          grid-row: 12/14;
+
+    grid-row: 12/14;
     grid-column: 1/9;
 
     & h2 {
@@ -418,7 +466,7 @@ div[class^="day-"]:hover .today {
     background: linear-gradient(45deg, color(var(--purple-dates) alpha(-60%)), color(var(--purple-dates) alpha(-60%))), url(/images/day16-photo.jpg)no-repeat;
     background-size: cover;
     background-position: center;
-        grid-row: 16/19;
+    grid-row: 16/19;
     grid-column: 6/9;
     @media (--medium) {
 
@@ -432,7 +480,7 @@ div[class^="day-"]:hover .today {
     background: url(/images/day12.svg)no-repeat, var(--blue-muted);
     background-size: 70%;
     background-position: center;
-      grid-row: 16/19;
+    grid-row: 16/19;
     grid-column: 1/6;
     @media (--medium) {
         grid-row: 10/13;
@@ -441,7 +489,7 @@ div[class^="day-"]:hover .today {
 }
 
 .day-13 {
-       grid-row: 19/21;
+    grid-row: 19/21;
     grid-column: 1/6;
     @media (--medium) {
         grid-row: 10/14;
@@ -450,7 +498,7 @@ div[class^="day-"]:hover .today {
 }
 
 .day-14 {
-          grid-row: 19/22;
+    grid-row: 19/22;
     grid-column: 6/9;
     @media (--medium) {
         grid-row: 14/16;
@@ -460,7 +508,7 @@ div[class^="day-"]:hover .today {
 
 
 .day-15 {
-         grid-row: 21/24;
+    grid-row: 21/24;
     grid-column: 1/6;
     @media (--medium) {
         grid-row: 13/16;
@@ -487,7 +535,7 @@ div[class^="day-"]:hover .today {
 
 
 .day-16 {
-     grid-row: 22/24;
+    grid-row: 22/24;
     grid-column: 6/9;
     @media (--medium) {
         grid-row: 14/19;
@@ -503,7 +551,7 @@ div[class^="day-"]:hover .today {
     background: linear-gradient(45deg, color(var(--purple-dates) alpha(-50%)), color(var(--purple-dates) alpha(-50%))), url(/images/day17-photo.jpg)no-repeat;
     background-size: cover;
     background-position: center;
-        grid-row: 32/34;
+    grid-row: 32/34;
     grid-column: 1/9;
     @media (--medium) {
         background-size: cover, 120%;
@@ -515,7 +563,7 @@ div[class^="day-"]:hover .today {
 
 
 .day-17 {
-      grid-row: 27/30;
+    grid-row: 27/30;
     grid-column: 1/9;
     @media (--medium) {
         grid-row: 16/19;
@@ -525,7 +573,7 @@ div[class^="day-"]:hover .today {
 
 
 .day-18 {
-     grid-row: 30/32;
+    grid-row: 30/32;
     grid-column: 1/6;
     @media (--medium) {
         grid-row: 19/23;
@@ -534,7 +582,7 @@ div[class^="day-"]:hover .today {
 }
 
 .day-19 {
-         grid-row: 30/32;
+    grid-row: 30/32;
     grid-column: 6/9;
     @media (--medium) {
         grid-row: 19/23;
@@ -543,7 +591,7 @@ div[class^="day-"]:hover .today {
 }
 
 .day-20 {
-      grid-row: 34/36;
+    grid-row: 34/36;
     grid-column: 1/6;
     @media (--medium) {
         grid-row: 19/23;
@@ -553,7 +601,7 @@ div[class^="day-"]:hover .today {
 
 
 .day-21 {
-          grid-row: 34/37;
+    grid-row: 34/37;
     grid-column: 6/9;
     @media (--medium) {
         grid-row: 23/28;
@@ -569,7 +617,7 @@ div[class^="day-"]:hover .today {
     background: linear-gradient(45deg, color(var(--purple-dates) alpha(-60%)), color(var(--purple-dates) alpha(-60%))), url(/images/horizontalchoir.jpg)no-repeat;
     background-size: cover;
     background-position: center;
-      grid-row: 37/39;
+    grid-row: 37/39;
     grid-column: 6/9;
     @media (--medium) {
         grid-row: 23/29;
@@ -581,7 +629,7 @@ div[class^="day-"]:hover .today {
 
 
 .day-22 {
-            grid-row: 36/39;
+    grid-row: 36/39;
     grid-column: 1/6;
     @media (--medium) {
         grid-row: 28/32;
@@ -592,7 +640,7 @@ div[class^="day-"]:hover .today {
 
 
 .day-23 {
-      grid-row: 39/42;
+    grid-row: 39/42;
     grid-column: 1/9;
     @media (--medium) {
         grid-row: 29/32;
@@ -608,7 +656,7 @@ div[class^="day-"]:hover .today {
     background: linear-gradient(45deg, color(var(--purple-dates) alpha(-60%)), color(var(--purple-dates) alpha(-60%))), url(/images/horizontalfamily.jpg)no-repeat;
     background-size: cover;
     background-position: center;
-          grid-row: 42/45;
+    grid-row: 42/45;
     grid-column: 1/9;
     @media (--medium) {
         grid-row: 32/37;
@@ -618,13 +666,14 @@ div[class^="day-"]:hover .today {
 
 
 .day-24 {
-      grid-row: 45/48;
+    grid-row: 45/48;
     grid-column: 1/9;
     @media (--medium) {
         grid-row: 37/41;
         grid-column: 1/6;
     }
 }
+
 
 
 

@@ -94,8 +94,10 @@ __webpack_require__(4);
 $(function () {
   var date = new Date(),
       currentDate = date.getFullYear() + "-" + (date.getMonth() + 1) + "-" + date.getDate();
+  currentDate = Date.parse(currentDate);
   $(".grid-item").each(function () {
     var specifiedDate = $(this).data('date');
+    specifiedDate = Date.parse(specifiedDate);
     if (specifiedDate == currentDate) {
       $(this).append('<div id="date-featured"></div>').find('#date-featured').addClass("today");
     } else if (currentDate > specifiedDate) {
@@ -108,7 +110,7 @@ $(function () {
 
 $(function () {
 
-  $('.grid-item').click(function () {
+  $('.today').click(function () {
 
     // Toggle the Body Class "show-nav"
     $(this).toggleClass('expanded');

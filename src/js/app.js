@@ -17,21 +17,21 @@ import 'smoothstate';
 
 
 $(function() {
-  var date = new Date(),
-    currentDate = date.getFullYear() + "-" + (date.getMonth() + 1) + "-" + date.getDate();
-  $(".grid-item").each(function() {
-    var specifiedDate = $(this).data('date');
-    if (specifiedDate == currentDate) {
-      $(this).append('<div id="date-featured"></div>').find('#date-featured').addClass("today");
-    } else if (currentDate > specifiedDate) {
-      $(this).addClass('past');
-    } else {
-      $(this).addClass('future');
-    }
-  });
+    var date = new Date(),
+    currentDate = date.getFullYear() + "-" + (date.getMonth()+1) + "-" + date.getDate();
+    currentDate=Date.parse(currentDate);
+    $(".grid-item").each(function() {
+       var specifiedDate = $(this).data('date');
+       specifiedDate=Date.parse(specifiedDate);
+       if (specifiedDate == currentDate) {
+ $(this).append('<div id="date-featured"></div>').find('#date-featured').addClass("today");
+       }else if (currentDate > specifiedDate) {
+         $(this).addClass('past');
+       }else {
+         $(this).addClass('future');
+       }
+   });
 });
-
-
 
 
 
@@ -40,7 +40,7 @@ $(function() {
 $(function() {
 
 
-    $('.grid-item').click(function() {
+    $('.today').click(function() {
 
           // Toggle the Body Class "show-nav"
           $(this).toggleClass('expanded');
