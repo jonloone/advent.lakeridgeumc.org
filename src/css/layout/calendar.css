@@ -52,7 +52,10 @@
     }
 }
 
-
+.today  h1 {
+        
+        transition-delay: .5s;
+    }
 
 .grid-item:hover {
     & h1 {
@@ -128,9 +131,11 @@
     z-index: 9999;
     position: absolute;
     transition: all .5s;
+    transition:background-size .4s ease;
     background: url(../images/burst.svg) no-repeat;
-    background-size: contain;
+    background-size: 50%;
     background-position: center;
+
 }
 
 
@@ -157,14 +162,15 @@
 /*----------  Hover effect peek  ----------*/
 
 div[class^="day-"].future:hover:before,
-div[class^="day-"]:hover h1 {
+div[class^="day-"].future h1 {
   transform: rotateX(-30deg);
   transition:all .4s ease;
 
 }
 
+.today.expanded:hover h1{
 
-
+}
 div[class^="day-"]{
    box-shadow: inset 2px 2px 9px rgba(8, 3, 41, 0.94);
 }
@@ -178,11 +184,11 @@ div[class^="day-"]{
 =           Open Effect           =
 ==================================*/
 
-.expanded.grid-item:before {}
+.expanded.today:before {}
 
 
 
-.expanded.grid-item:after {
+.expanded.today:after {
     content: ''; //transform: scale(3000);
     position: absolute;
     transition: all 1s;
@@ -190,22 +196,22 @@ div[class^="day-"]{
 
 
 
-.expanded.grid-item:after {
+.expanded.today:after {
     z-index: 100;
 }
 
 
 
 
-.grid-item.expanded.future:before,
-.grid-item.expanded.today:before {
+.expanded.future:before,
+.expanded.today:before {
     transform: rotateX(-180deg) skew(-2deg);
     box-shadow: 16px 24px 44px rgba(2, 0, 10, .24);
     z-index:9999;
 }
 
 
-.grid-item.expanded h1 {
+.today.expanded h1 {
     opacity: 0;
     transform: rotateX(-90deg) skew(-2deg);
 
@@ -451,8 +457,8 @@ div[class^="day-"]{
         padding: 2rem;
         align-items: flex-start;
         justify-content: flex-end;
-        background-size: cover, 120%;
-        background-position: center, -5rem -2rem;
+        background-size: cover, cover;
+        background-position: center;
         grid-row: 6 / 10;
         grid-column: 7/13;
     }

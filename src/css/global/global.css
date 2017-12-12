@@ -6,3 +6,30 @@ body{
   background: var(--black);
 }
 
+
+
+.stop-scrolling {
+  height: 100vh;
+  width:100vw;
+  overflow: hidden;
+}
+
+
+
+
+::-webkit-scrollbar-track
+{
+	border: 1px solid black;
+	background-color: var(--purple-muted);
+}
+
+::-webkit-scrollbar
+{
+	width: 10px;
+	background-color: var(--purple-muted);	
+}
+
+::-webkit-scrollbar-thumb
+{
+	background-color:  var(--black);
+}

@@ -24,7 +24,7 @@ $(function() {
        var specifiedDate = $(this).data('date');
        specifiedDate=Date.parse(specifiedDate);
        if (specifiedDate == currentDate) {
- $(this).append('<div id="date-featured"></div>').find('#date-featured').addClass("today");
+ $(this).addClass("today").append('<div id="date-featured"></div>');
        }else if (currentDate > specifiedDate) {
          $(this).addClass('past');
        }else {
@@ -35,6 +35,17 @@ $(function() {
 
 
 
+$('body').addClass('stop-scrolling')
+
+$('body').bind('touchmove', function(e){e.preventDefault()})
+
+
+setTimeout(
+  function() 
+  {
+$('body').removeClass('stop-scrolling')
+$('body').off('touchmove', function(e){e.preventDefault()})
+  }, 3500);
 
 
 $(function() {
