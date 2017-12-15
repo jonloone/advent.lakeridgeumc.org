@@ -2525,7 +2525,7 @@ opacity:1;
   }
     }
 .day-4 {
-    background: url(/images/day4.svg)no-repeat, #584F93;
+    background: url(/images/day4.svg)no-repeat, #34446A;
     background-size: cover;
     background-position: 43% 80px;
     background-position: 43% 5rem;
@@ -2990,8 +2990,8 @@ transition:all .4s ease;
   }
     }
 .day-12 {
-    background: url(/images/day12.svg)no-repeat, #659EC6;
-    background-size: 70%;
+    background: url(/images/day12.svg)no-repeat, url(/images/day7-bg.svg)no-repeat, #659EC6;
+    background-size: 70%,cover;
     background-position: center;
       // grid-row: 16/19;
     // grid-column: 1/6
@@ -3011,8 +3011,8 @@ transition:all .4s ease;
   }
     }
 .day-13 {
-      background: url(/images/day13.svg)no-repeat, #584F93;
-    background-size: 70%;
+      background: url(/images/day13.svg)no-repeat,url(/images/day23-bg.svg)no-repeat, #584F93;
+    background-size: 70%,cover;
     background-position: center;
        // grid-row: 19/21;
     // grid-column: 1/6
@@ -3033,8 +3033,8 @@ transition:all .4s ease;
     }
 .day-14 {
 
-        background: url(/images/day14.svg)no-repeat, #659EC6;
-    background-size: 70%;
+        background: url(/images/day14.svg)no-repeat,url(/images/day11bg.svg)no-repeat, #659EC6;
+    background-size: 70%,cover;
     background-position: center;
           // grid-row: 19/22;
     // grid-column: 6/9
