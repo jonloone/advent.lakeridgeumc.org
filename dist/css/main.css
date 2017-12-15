@@ -2827,8 +2827,8 @@ transition:all .4s ease;
   }
     }
 .day-9 {
-    background: url(/images/day9.svg)no-repeat, #584F93;
-    background-size: 175%;
+    background: url(/images/day9-bg.svg)no-repeat,url(/images/day9.svg)no-repeat, #584F93;
+    background-size: cover,contain;
     background-position: center;
       // grid-row: 8/10;
     // grid-column: 6/9
@@ -3011,6 +3011,9 @@ transition:all .4s ease;
   }
     }
 .day-13 {
+      background: url(/images/day13.svg)no-repeat, #584F93;
+    background-size: 70%;
+    background-position: center;
        // grid-row: 19/21;
     // grid-column: 1/6
 }
@@ -3029,6 +3032,10 @@ transition:all .4s ease;
   }
     }
 .day-14 {
+
+        background: url(/images/day14.svg)no-repeat, #659EC6;
+    background-size: 70%;
+    background-position: center;
           // grid-row: 19/22;
     // grid-column: 6/9
 }
@@ -3048,7 +3055,10 @@ transition:all .4s ease;
     }
 .day-15 {
          // grid-row: 21/24;
-    // grid-column: 1/6
+    // grid-column: 1/6;
+          background: url(/images/day15.svg)no-repeat, #34446A;
+    background-size: 70%;
+    background-position: center
 }
 @media (max-width: 490px) {
   .day-15{
@@ -3090,7 +3100,10 @@ transition:all .4s ease;
     }
 .day-16 {
      // grid-row: 22/24;
-    // grid-column: 6/9
+    // grid-column: 6/9;
+              background: url(/images/day16.svg)no-repeat, #E55B7D;
+    background-size: cover;
+    background-position: center
 }
 @media (max-width: 490px) {
   .day-16{
@@ -3134,7 +3147,10 @@ transition:all .4s ease;
     }
 .day-17 {
       // grid-row: 27/30;
-    // grid-column: 1/9
+    // grid-column: 1/9;
+              background: url(/images/day17.svg)no-repeat, #34446A;
+    background-size: cover;
+    background-position: center
 }
 @media (max-width: 490px) {
   .day-17{
@@ -3151,8 +3167,9 @@ transition:all .4s ease;
   }
     }
 .day-18 {
-     // grid-row: 30/32;
-    // grid-column: 1/6
+             background: url(/images/day18.svg)no-repeat, #E55B7D;
+    background-size: 75%;
+    background-position: center
 }
 @media (max-width: 490px) {
   .day-18{
@@ -3169,8 +3186,9 @@ transition:all .4s ease;
   }
     }
 .day-19 {
-         // grid-row: 30/32;
-    // grid-column: 6/9
+             background: url(/images/day19.svg)no-repeat, #584F93;
+    background-size: cover;
+    background-position: center
 }
 @media (max-width: 490px) {
   .day-19{
@@ -3187,8 +3205,9 @@ transition:all .4s ease;
   }
     }
 .day-20 {
-      // grid-row: 34/36;
-    // grid-column: 1/6
+             background: url(/images/day20.svg)no-repeat, #659EC6;
+    background-size:cover;
+    background-position: center
 }
 @media (max-width: 490px) {
   .day-20{
@@ -3205,8 +3224,9 @@ transition:all .4s ease;
   }
     }
 .day-21 {
-          // grid-row: 34/37;
-    // grid-column: 6/9
+           background: url(/images/day21.svg)no-repeat, #659EC6;
+    background-size:90%;
+    background-position: center
 }
 @media (max-width: 490px) {
   .day-21{
@@ -3247,8 +3267,9 @@ transition:all .4s ease;
   }
     }
 .day-22 {
-            // grid-row: 36/39;
-    // grid-column: 1/6
+          background: url(/images/day22.svg)no-repeat, #34446A;
+    background-size:cover;
+    background-position: center
 }
 @media (max-width: 490px) {
   .day-22{
@@ -3265,8 +3286,9 @@ transition:all .4s ease;
   }
     }
 .day-23 {
-      // grid-row: 39/42;
-    // grid-column: 1/9
+          background: url(/images/day23.svg)no-repeat, url(/images/day23-bg.svg)no-repeat,#E55B7D;
+    background-size:70%,cover;
+    background-position: center
 }
 @media (max-width: 490px) {
   .day-23{
@@ -3307,8 +3329,9 @@ transition:all .4s ease;
   }
     }
 .day-24 {
-      // grid-row: 45/48;
-    // grid-column: 1/9
+          background: url(/images/day24.svg)no-repeat,#584F93;
+    background-size:cover;
+    background-position: center
 }
 @media (max-width: 490px) {
   .day-24{
