@@ -23,6 +23,8 @@
 :root {
   --font-title: TTBackwardsSans-Bold;
   --font-body:TTBackwardsSans-Light;
+  --font-script:TTBackwardsScript-Light;
+  --font-thin:TTBackwardsSans-Thin;
 }
 
 
@@ -43,6 +45,7 @@
 --rose: #E55B7D;
 --rose-muted:#512D2D;
 --blue: #21A8D9;
+--blue-dark:#34446A;
 --blue-muted:#659EC6;
 --white: #FFFEFC;
 --gray-light: #E5E4E3;
